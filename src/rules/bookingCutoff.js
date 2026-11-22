@@ -28,12 +28,14 @@ export function isBookable(daysUntil, seatsLeft) {
 }
 
 /** Short, human-readable status text. Colour is never the only signal. */
-export function describeDepartureStatus(status, seatsLeft) {
+export function describeDepartureStatus(status, seatsLeft, { short = false } = {}) {
   switch (status) {
     case DEPARTURE_STATUS.DEPARTED:
       return 'Already departed';
     case DEPARTURE_STATUS.CLOSED:
-      return `Booking closed (online booking ends ${BOOKING_CUTOFF_DAYS} days before departure)`;
+      return short
+        ? 'Booking closed'
+        : `Booking closed (online booking ends ${BOOKING_CUTOFF_DAYS} days before departure)`;
     case DEPARTURE_STATUS.SOLD_OUT:
       return 'Sold out';
     default:

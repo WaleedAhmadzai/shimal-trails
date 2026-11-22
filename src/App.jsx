@@ -10,6 +10,7 @@ import PlanPage from './pages/PlanPage.jsx';
 import CheckoutPage from './pages/CheckoutPage.jsx';
 import ConfirmationPage from './pages/ConfirmationPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
+import DemoPage from './pages/DemoPage.jsx';
 import './styles/global.css';
 
 function AppRoutes() {
@@ -26,6 +27,7 @@ function AppRoutes() {
         <Route path="plan" element={<PlanPage />} />
         <Route path="checkout" element={<CheckoutPage />} />
         <Route path="confirmation" element={<ConfirmationPage />} />
+        <Route path="demo" element={<DemoPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

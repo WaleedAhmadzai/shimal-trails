@@ -963,3 +963,17 @@ fieldset {
   border-radius: var(--radius-sm);
   font-weight: 700;
 }
+
+.demo-banner {
+  margin: 0;
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+  text-align: center;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-bottom: 1px solid #e8c766;
+}
+.demo-banner a {
+  color: inherit;
+}

@@ -86,7 +86,8 @@ export default function PlanItem({ item, onUpdate, onToggleAddOn, onRemove }) {
                   // The current date stays selectable so the select can show it.
                   disabled={d.status !== DEPARTURE_STATUS.OPEN && d.id !== line.departureId}
                 >
-                  {formatDate(getDepartureDate(d.daysFromToday))} · {describeDepartureStatus(d.status, d.seatsLeft)}
+                  {formatDate(getDepartureDate(d.daysFromToday))} ·{' '}
+                  {describeDepartureStatus(d.status, d.seatsLeft, { short: true })}
                 </option>
               ))}
             </select>

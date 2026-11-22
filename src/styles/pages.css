@@ -319,3 +319,19 @@
 .confirmation__line-total {
   font-weight: 800;
 }
+
+/* ---------- Demo settings ---------- */
+.demo__grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  align-items: start;
+}
+.demo__grid .panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.demo__footer {
+  margin-top: var(--space-6);
+}
