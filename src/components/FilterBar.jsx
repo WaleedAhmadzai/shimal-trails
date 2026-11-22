@@ -10,7 +10,12 @@ export default function FilterBar({ criteria, onChange, onReset, ageError }) {
   };
 
   return (
-    <form className="filter-bar" role="search" aria-label="Search and filter trips" onSubmit={(e) => e.preventDefault()}>
+    <form
+      className="filter-bar"
+      role="search"
+      aria-label="Search and filter trips"
+      onSubmit={(e) => e.preventDefault()}
+    >
       <div className="field field--search">
         <label htmlFor="search">Search trips</label>
         <input

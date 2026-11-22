@@ -38,7 +38,8 @@ export default function ConfirmationPage() {
             Booking reference <strong className="confirmation__ref">{reference}</strong>
           </p>
           <p className="small">
-            Made on {new Date(createdAt).toLocaleString('en-GB')}. This is a student demo: no payment was taken and no booking was sent.
+            Made on {new Date(createdAt).toLocaleString('en-GB')}. This is a student demo: no payment was taken and no
+            booking was sent.
           </p>
         </div>
       </div>
@@ -51,7 +52,8 @@ export default function ConfirmationPage() {
               <li key={item.experienceId}>
                 <h3>{item.title}</h3>
                 <p>
-                  {formatDate(new Date(item.departureDate))} · {item.travellers} {item.travellers === 1 ? 'traveller' : 'travellers'}
+                  {formatDate(new Date(item.departureDate))} · {item.travellers}{' '}
+                  {item.travellers === 1 ? 'traveller' : 'travellers'}
                   {item.addOns.length > 0 && ` · Extras: ${item.addOns.join(', ')}`}
                 </p>
                 <p className="confirmation__line-total">{formatPKR(item.total)}</p>

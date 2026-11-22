@@ -55,9 +55,11 @@ export function validateCheckout(form, trips) {
   }
 
   if (form.pickupType === 'meeting' && !form.meetingPoint) errors.meetingPoint = 'Choose a meeting point.';
-  if (form.pickupType === 'doorstep' && !form.doorstepArea) errors.doorstepArea = 'Choose your area. Doorstep pickup is only offered in these areas.';
+  if (form.pickupType === 'doorstep' && !form.doorstepArea)
+    errors.doorstepArea = 'Choose your area. Doorstep pickup is only offered in these areas.';
 
-  if (form.notes.length > NOTES_MAX_LENGTH) errors.notes = `Keep notes under ${NOTES_MAX_LENGTH} characters (currently ${form.notes.length}).`;
+  if (form.notes.length > NOTES_MAX_LENGTH)
+    errors.notes = `Keep notes under ${NOTES_MAX_LENGTH} characters (currently ${form.notes.length}).`;
 
   if (!form.acceptTerms) errors.acceptTerms = 'Confirm that you have read the cancellation policy.';
 

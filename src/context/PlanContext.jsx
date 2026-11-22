@@ -27,7 +27,10 @@ function loadSavedPlan() {
   const dropped = value.length - lines.length;
   return {
     lines,
-    notice: dropped > 0 ? `${dropped} saved ${dropped === 1 ? 'item was' : 'items were'} unreadable and removed from your plan.` : null,
+    notice:
+      dropped > 0
+        ? `${dropped} saved ${dropped === 1 ? 'item was' : 'items were'} unreadable and removed from your plan.`
+        : null,
   };
 }
 

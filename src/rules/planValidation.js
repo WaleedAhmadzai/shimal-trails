@@ -10,7 +10,13 @@ import { getDepartureStatus, DEPARTURE_STATUS, BOOKING_CUTOFF_DAYS } from './boo
  */
 export function getLineIssues(line, experience) {
   if (!experience) {
-    return [{ code: 'TRIP_REMOVED', message: 'This trip is no longer offered.', fix: { label: 'Remove from plan', type: 'remove' } }];
+    return [
+      {
+        code: 'TRIP_REMOVED',
+        message: 'This trip is no longer offered.',
+        fix: { label: 'Remove from plan', type: 'remove' },
+      },
+    ];
   }
 
   const issues = [];
@@ -42,9 +48,14 @@ export function getLineIssues(line, experience) {
         issues.push({
           code: check.code,
           message: check.message,
-          fix: check.max > 0 && line.travellers > check.max
-            ? { label: `Change to ${check.max} ${check.max === 1 ? 'traveller' : 'travellers'}`, type: 'patch', patch: { travellers: check.max } }
-            : undefined,
+          fix:
+            check.max > 0 && line.travellers > check.max
+              ? {
+                  label: `Change to ${check.max} ${check.max === 1 ? 'traveller' : 'travellers'}`,
+                  type: 'patch',
+                  patch: { travellers: check.max },
+                }
+              : undefined,
         });
       }
     }
@@ -56,7 +67,11 @@ export function getLineIssues(line, experience) {
     issues.push({
       code: 'ADDON_REMOVED',
       message: 'An extra you chose is no longer offered and will not be charged.',
-      fix: { label: 'Remove the extra', type: 'patch', patch: { addOnIds: line.addOnIds.filter((id) => knownAddOns.includes(id)) } },
+      fix: {
+        label: 'Remove the extra',
+        type: 'patch',
+        patch: { addOnIds: line.addOnIds.filter((id) => knownAddOns.includes(id)) },
+      },
     });
   }
   return issues;

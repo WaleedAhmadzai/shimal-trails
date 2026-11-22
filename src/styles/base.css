@@ -15,7 +15,7 @@ body {
   line-height: 1.55;
   color: var(--color-ink);
   background: var(--color-paper);
-  overflow-wrap: anywhere; /* long words never force horizontal scrolling */
+  overflow-wrap: break-word; /* long words wrap instead of forcing horizontal scrolling */
 }
 
 #root {
@@ -32,16 +32,33 @@ h3 {
   margin: 0 0 var(--space-3);
   color: var(--color-ink);
 }
-h1 { font-size: var(--text-3xl); letter-spacing: -0.01em; }
-h2 { font-size: var(--text-xl); }
-h3 { font-size: var(--text-lg); }
+h1 {
+  font-size: var(--text-3xl);
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: var(--text-xl);
+}
+h3 {
+  font-size: var(--text-lg);
+}
 
-p { margin: 0 0 var(--space-3); }
+p {
+  margin: 0 0 var(--space-3);
+}
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-a { color: var(--color-primary); text-underline-offset: 3px; }
-a:hover { color: var(--color-primary-hover); }
+a {
+  color: var(--color-primary);
+  text-underline-offset: 3px;
+}
+a:hover {
+  color: var(--color-primary-hover);
+}
 
 code {
   font-size: 0.9em;
@@ -56,7 +73,9 @@ code {
   box-shadow: var(--focus-ring);
   border-radius: var(--radius-sm);
 }
-.site-main:focus { outline: none; }
+.site-main:focus {
+  outline: none;
+}
 
 .visually-hidden {
   position: absolute !important;
@@ -77,7 +96,10 @@ code {
   border-radius: var(--radius-sm);
   z-index: 100;
 }
-.skip-link:focus { top: var(--space-3); color: #fff; }
+.skip-link:focus {
+  top: var(--space-3);
+  color: #fff;
+}
 
 .container {
   width: 100%;
@@ -86,12 +108,23 @@ code {
   padding-inline: var(--space-4);
 }
 @media (min-width: 768px) {
-  .container { padding-inline: var(--space-6); }
+  .container {
+    padding-inline: var(--space-6);
+  }
 }
 
-.muted { color: var(--color-muted); }
-.small { font-size: var(--text-sm); }
+.muted {
+  color: var(--color-muted);
+}
+.small {
+  font-size: var(--text-sm);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

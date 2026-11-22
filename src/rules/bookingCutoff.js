@@ -37,6 +37,8 @@ export function describeDepartureStatus(status, seatsLeft) {
     case DEPARTURE_STATUS.SOLD_OUT:
       return 'Sold out';
     default:
-      return seatsLeft <= 3 ? `Only ${seatsLeft} ${seatsLeft === 1 ? 'seat' : 'seats'} left` : `${seatsLeft} seats left`;
+      return seatsLeft <= 3
+        ? `Only ${seatsLeft} ${seatsLeft === 1 ? 'seat' : 'seats'} left`
+        : `${seatsLeft} seats left`;
   }
 }

@@ -13,8 +13,6 @@ export function DataProvider({ children }) {
 
   useEffect(() => {
     const controller = new AbortController();
-    setStatus('loading');
-    setError(null);
 
     fetchExperiences({ signal: controller.signal })
       .then((records) => {
@@ -31,7 +29,12 @@ export function DataProvider({ children }) {
     return () => controller.abort();
   }, [attempt]);
 
-  const reload = useCallback(() => setAttempt((n) => n + 1), []);
+  // Retry: show the loading state again, then re-run the effect.
+  const reload = useCallback(() => {
+    setStatus('loading');
+    setError(null);
+    setAttempt((n) => n + 1);
+  }, []);
 
   const getExperience = useCallback(
     (id) => experiences.find((experience) => experience.id === id) ?? null,

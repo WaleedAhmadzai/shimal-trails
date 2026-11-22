@@ -9,7 +9,16 @@ import { validateCheckout, EMPTY_CHECKOUT_FORM, NOTES_MAX_LENGTH } from '../util
 import { formatPKR, formatDate, getDepartureDate } from '../utils/format.js';
 
 // Order used for the error summary and for focusing the first problem.
-const FIELD_ORDER = ['leadName', 'phone', 'email', 'youngestAge', 'meetingPoint', 'doorstepArea', 'notes', 'acceptTerms'];
+const FIELD_ORDER = [
+  'leadName',
+  'phone',
+  'email',
+  'youngestAge',
+  'meetingPoint',
+  'doorstepArea',
+  'notes',
+  'acceptTerms',
+];
 const FIELD_LABELS = {
   leadName: 'Lead traveller name',
   phone: 'Mobile number',
@@ -20,6 +29,11 @@ const FIELD_LABELS = {
   notes: 'Notes',
   acceptTerms: 'Cancellation policy',
 };
+
+// Simulated booking reference, e.g. ST-K3F9ZQ.
+function createReference() {
+  return `ST-${Date.now().toString(36).toUpperCase().slice(-6)}`;
+}
 
 export default function CheckoutPage() {
   return (
@@ -91,7 +105,7 @@ function CheckoutContent() {
     // Simulated booking. Personal details are NOT stored: only the trip
     // choices and totals are kept for the confirmation page.
     const booking = {
-      reference: `ST-${Date.now().toString(36).toUpperCase().slice(-6)}`,
+      reference: createReference(),
       createdAt: new Date().toISOString(),
       items: validItems.map(({ experience, departure, line, cost }) => ({
         experienceId: experience.id,
@@ -161,30 +175,52 @@ function CheckoutContent() {
           <div className="field field--full">
             <label htmlFor="leadName">Full name</label>
             <input type="text" autoComplete="name" value={form.leadName} {...fieldProps('leadName')} />
-            <p id="leadName-hint" className="field__hint">As shown on the CNIC or passport you will carry.</p>
+            <p id="leadName-hint" className="field__hint">
+              As shown on the CNIC or passport you will carry.
+            </p>
             {renderError('leadName')}
           </div>
 
           <div className="field">
             <label htmlFor="phone">Mobile number</label>
-            <input type="tel" autoComplete="tel" inputMode="tel" placeholder="0300-1234567" value={form.phone} {...fieldProps('phone')} />
-            <p id="phone-hint" className="field__hint">The trip leader calls this number on the day.</p>
+            <input
+              type="tel"
+              autoComplete="tel"
+              inputMode="tel"
+              placeholder="0300-1234567"
+              value={form.phone}
+              {...fieldProps('phone')}
+            />
+            <p id="phone-hint" className="field__hint">
+              The trip leader calls this number on the day.
+            </p>
             {renderError('phone')}
           </div>
 
           <div className="field">
             <label htmlFor="email">Email</label>
             <input type="email" autoComplete="email" value={form.email} {...fieldProps('email')} />
-            <p id="email-hint" className="field__hint">For the packing list and summary.</p>
+            <p id="email-hint" className="field__hint">
+              For the packing list and summary.
+            </p>
             {renderError('email')}
           </div>
 
           <div className="field">
             <label htmlFor="youngestAge">Age of the youngest traveller</label>
-            <input type="number" inputMode="numeric" min="1" max="90" value={form.youngestAge} {...fieldProps('youngestAge')} />
+            <input
+              type="number"
+              inputMode="numeric"
+              min="1"
+              max="90"
+              value={form.youngestAge}
+              {...fieldProps('youngestAge')}
+            />
             <p id="youngestAge-hint" className="field__hint">
               Checked against each trip&apos;s age limit:{' '}
-              {trips.map((trip) => `${trip.title.split(':')[0]} ${trip.minAge > 0 ? `${trip.minAge}+` : 'all ages'}`).join(' · ')}
+              {trips
+                .map((trip) => `${trip.title.split(':')[0]} ${trip.minAge > 0 ? `${trip.minAge}+` : 'all ages'}`)
+                .join(' · ')}
             </p>
             {renderError('youngestAge')}
           </div>
@@ -215,7 +251,8 @@ function CheckoutContent() {
               onChange={handleChange}
             />
             <span>
-              <strong>Doorstep pickup</strong> · {formatPKR(DOORSTEP_PICKUP_FEE)} per trip, selected Islamabad and Rawalpindi areas only
+              <strong>Doorstep pickup</strong> · {formatPKR(DOORSTEP_PICKUP_FEE)} per trip, selected Islamabad and
+              Rawalpindi areas only
             </span>
           </label>
 
@@ -230,7 +267,9 @@ function CheckoutContent() {
                   </option>
                 ))}
               </select>
-              <p id="meetingPoint-hint" className="field__hint">Be there 15 minutes before the departure time on your ticket.</p>
+              <p id="meetingPoint-hint" className="field__hint">
+                Be there 15 minutes before the departure time on your ticket.
+              </p>
               {renderError('meetingPoint')}
             </div>
           ) : (
@@ -244,7 +283,9 @@ function CheckoutContent() {
                   </option>
                 ))}
               </select>
-              <p id="doorstepArea-hint" className="field__hint">Not listed? Choose a free meeting point instead.</p>
+              <p id="doorstepArea-hint" className="field__hint">
+                Not listed? Choose a free meeting point instead.
+              </p>
               {renderError('doorstepArea')}
             </div>
           )}
@@ -263,10 +304,13 @@ function CheckoutContent() {
           <label className="checkbox" htmlFor="acceptTerms">
             <input type="checkbox" checked={form.acceptTerms} {...fieldProps('acceptTerms')} />
             <span>
-              I have read the cancellation policy: free cancellation up to 7 days before departure, 50% refund after that.
+              I have read the cancellation policy: free cancellation up to 7 days before departure, 50% refund after
+              that.
             </span>
           </label>
-          <p id="acceptTerms-hint" className="visually-hidden">Required</p>
+          <p id="acceptTerms-hint" className="visually-hidden">
+            Required
+          </p>
           {renderError('acceptTerms')}
         </div>
 

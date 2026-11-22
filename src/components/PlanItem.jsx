@@ -107,7 +107,12 @@ export default function PlanItem({ item, onUpdate, onToggleAddOn, onRemove }) {
           />
         </div>
 
-        <AddOnOptions idPrefix={`${idBase}-addon`} addOns={experience.addOns} selectedIds={line.addOnIds} onToggle={onToggleAddOn} />
+        <AddOnOptions
+          idPrefix={`${idBase}-addon`}
+          addOns={experience.addOns}
+          selectedIds={line.addOnIds}
+          onToggle={onToggleAddOn}
+        />
 
         <div className="plan-item__footer">
           <p className="plan-item__total">

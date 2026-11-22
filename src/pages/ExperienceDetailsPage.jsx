@@ -10,7 +10,7 @@ import { formatPKR } from '../utils/format.js';
 
 export default function ExperienceDetailsPage() {
   return (
-    <div className="container page">
+    <div className="container page has-mobile-bar">
       <DataGate loadingLabel="Loading trip details…">
         <DetailsContent />
       </DataGate>
@@ -29,7 +29,10 @@ function DetailsContent() {
 
   if (!experience) {
     // Suggest trips whose ID shares a word with the address that was typed.
-    const words = experienceId.toLowerCase().split(/[^a-z]+/).filter((w) => w.length > 2);
+    const words = experienceId
+      .toLowerCase()
+      .split(/[^a-z]+/)
+      .filter((w) => w.length > 2);
     const similar = experiences.filter((e) => words.some((w) => e.id.includes(w))).slice(0, 3);
     return (
       <EmptyState
@@ -41,7 +44,8 @@ function DetailsContent() {
         }
       >
         <p>
-          There is no trip with the ID <code>{experienceId}</code>. It may have been removed or the link may be mistyped.
+          There is no trip with the ID <code>{experienceId}</code>. It may have been removed or the link may be
+          mistyped.
         </p>
         {similar.length > 0 && (
           <>
@@ -117,7 +121,9 @@ function DetailsContent() {
                 ))}
               </ul>
               {experience.addOns.length > 0 && (
-                <p className="muted small">Extras marked with a price can be added in the booking panel and appear in your total.</p>
+                <p className="muted small">
+                  Extras marked with a price can be added in the booking panel and appear in your total.
+                </p>
               )}
             </div>
           </section>

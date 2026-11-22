@@ -19,7 +19,9 @@ export default function usePlanDetails() {
       : null;
     // Until data has loaded we cannot judge the line, so report no issues yet.
     const issues = ready ? getLineIssues(line, experience) : [];
-    const cost = experience ? calculateLineCost(experience, line) : { base: 0, addOns: 0, selectedAddOns: [], total: 0 };
+    const cost = experience
+      ? calculateLineCost(experience, line)
+      : { base: 0, addOns: 0, selectedAddOns: [], total: 0 };
     return { line, experience, departure, issues, cost };
   });
 

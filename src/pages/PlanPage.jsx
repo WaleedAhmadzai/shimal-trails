@@ -6,6 +6,7 @@ import PlanItem from '../components/PlanItem.jsx';
 import PlanSummary from '../components/PlanSummary.jsx';
 import { EmptyState } from '../components/StatusViews.jsx';
 import { calculatePlanSummary } from '../rules/pricing.js';
+import { formatPKR } from '../utils/format.js';
 
 export default function PlanPage() {
   const plan = usePlanDetails();
@@ -22,7 +23,7 @@ export default function PlanPage() {
   const canCheckout = plan.items.length > 0 && plan.issueCount === 0;
 
   return (
-    <div className="container page">
+    <div className={`container page ${plan.items.length ? 'has-mobile-bar' : ''}`}>
       <header className="page-header">
         <p className="eyebrow">Step 2 of 3</p>
         <h1>Your trip plan</h1>
@@ -76,7 +77,10 @@ export default function PlanPage() {
                   <p className="notice__title">
                     {plan.issueCount} {plan.issueCount === 1 ? 'problem needs' : 'problems need'} fixing before checkout
                   </p>
-                  <p>Seats and dates may have changed since you saved this plan. Use the buttons on each trip to fix them.</p>
+                  <p>
+                    Seats and dates may have changed since you saved this plan. Use the buttons on each trip to fix
+                    them.
+                  </p>
                 </div>
               )}
               <ul className="plan-list">
@@ -115,6 +119,24 @@ export default function PlanPage() {
                 )}
               </PlanSummary>
             </aside>
+            {/* Small screens: total and primary action stay visible while editing. */}
+            <div className="mobile-bar">
+              <p className="mobile-bar__total">
+                <span className="small muted">
+                  {summary.tripCount} {summary.tripCount === 1 ? 'trip' : 'trips'} · total
+                </span>
+                <strong>{formatPKR(summary.total)}</strong>
+              </p>
+              {canCheckout ? (
+                <Link className="btn btn--primary" to="/checkout">
+                  Continue
+                </Link>
+              ) : (
+                <span className="notice--warning small mobile-bar__blocked">
+                  ⚠ Fix {plan.issueCount} problem(s) first
+                </span>
+              )}
+            </div>
           </div>
         )}
       </DataGate>

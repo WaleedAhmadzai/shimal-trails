@@ -187,7 +187,13 @@ export const experiences = [
     summary: 'The Raikot jeep track, two nights at Fairy Meadows and a 7 to 9 hour base camp hike.',
     description:
       'For fit walkers. After a long drive and the Raikot bridge jeep track, you hike 3 to 4 hours up to Fairy Meadows. Day three is the base camp hike: 7 to 9 hours on forest trail and glacier moraine. Nights at the meadows are in cabins with shared facilities.',
-    includes: ['Return transport', 'Jeeps Raikot to Tato', '4 nights (hotel and cabins)', 'Breakfast and dinner', 'Guide'],
+    includes: [
+      'Return transport',
+      'Jeeps Raikot to Tato',
+      '4 nights (hotel and cabins)',
+      'Breakfast and dinner',
+      'Guide',
+    ],
     notIncluded: ['Lunches', 'Pony for the walk up', 'Sleeping bag'],
     addOns: [
       { id: 'pony', label: 'Pony from Tato to Fairy Meadows', pricePerPerson: 4000 },
@@ -214,7 +220,13 @@ export const experiences = [
     summary: 'Karimabad, Baltit Fort, Attabad Lake and the border crossing at Khunjerab.',
     description:
       'Up the Karakoram Highway to Hunza. Visit Baltit and Altit forts, take a boat on Attabad Lake, cross the Passu suspension bridge viewpoint and drive to the Pakistan-China border at Khunjerab (4,693 m). Most of the trip is by road with short walks.',
-    includes: ['Return transport', '5 nights hotel (shared rooms)', 'Breakfast and dinner', 'Fort entry tickets', 'Tour leader'],
+    includes: [
+      'Return transport',
+      '5 nights hotel (shared rooms)',
+      'Breakfast and dinner',
+      'Fort entry tickets',
+      'Tour leader',
+    ],
     notIncluded: ['Lunches', 'Boat ride on Attabad Lake', 'Khunjerab park fee for foreign nationals'],
     addOns: [
       { id: 'boat', label: 'Attabad Lake boat ride', pricePerPerson: 1500 },
@@ -263,7 +275,13 @@ export const experiences = [
     summary: 'Two nights in tents by the Panjkora river, with a jeep ride to Jahaz Banda base.',
     description:
       'Camping in Kumrat. Expect a long drive, a bumpy jeep section and two nights in shared tents beside the river. Day two is an optional walk towards the waterfall at Kala Chashma.',
-    includes: ['Return transport', 'Jeeps in the valley', '2 nights camping (shared tents)', 'All meals at camp', 'Guide'],
+    includes: [
+      'Return transport',
+      'Jeeps in the valley',
+      '2 nights camping (shared tents)',
+      'All meals at camp',
+      'Guide',
+    ],
     notIncluded: ['Sleeping bag', 'Meals on the road'],
     addOns: [{ id: 'sleeping-bag', label: 'Sleeping bag hire', pricePerPerson: 1200 }],
     departures: [
@@ -286,7 +304,13 @@ export const experiences = [
     summary: 'A jeep to Dowarian, a steep 5-hour climb and a night camping beside Ratti Gali lake.',
     description:
       'A short but demanding trek. After the drive to Dowarian, a jeep climbs to the base camp and you hike about five hours to the glacial lake at 3,700 m. Night temperatures fall close to zero and the altitude can affect anyone, so this trip is limited to travellers aged 16 and over.',
-    includes: ['Return transport', 'Jeep to base camp', '1 night guest house, 1 night camping', 'All meals on the trek', 'Guide'],
+    includes: [
+      'Return transport',
+      'Jeep to base camp',
+      '1 night guest house, 1 night camping',
+      'All meals on the trek',
+      'Guide',
+    ],
     notIncluded: ['Sleeping bag', 'Porter for personal bags'],
     addOns: [
       { id: 'sleeping-bag', label: 'Four-season sleeping bag hire', pricePerPerson: 2000 },

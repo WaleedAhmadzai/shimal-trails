@@ -6,8 +6,14 @@ import { getNextOpenDeparture } from '../utils/experienceQueries.js';
 
 const STEPS = [
   { title: 'Compare', text: 'See difficulty, age limit, altitude and the next open date on every trip card.' },
-  { title: 'Choose a date', text: 'Pick a departure with live seats. Closed and sold-out dates are labelled, not hidden.' },
-  { title: 'See the full price', text: 'Add travellers and extras and the total updates before you add anything to your plan.' },
+  {
+    title: 'Choose a date',
+    text: 'Pick a departure with live seats. Closed and sold-out dates are labelled, not hidden.',
+  },
+  {
+    title: 'See the full price',
+    text: 'Add travellers and extras and the total updates before you add anything to your plan.',
+  },
   { title: 'Book', text: 'Choose a pickup point, check the summary and get a booking reference.' },
 ];
 

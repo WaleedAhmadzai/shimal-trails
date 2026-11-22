@@ -28,8 +28,8 @@ export default function PriceBreakdown({ experience, travellers, cost }) {
         </div>
       </dl>
       <p className="breakdown__note">
-        Pickup is chosen at checkout: free from a meeting point, or {formatPKR(DOORSTEP_PICKUP_FEE)} for doorstep pickup in
-        Islamabad/Rawalpindi. No other charges are added.
+        Pickup is chosen at checkout: free from a meeting point, or {formatPKR(DOORSTEP_PICKUP_FEE)} for doorstep pickup
+        in Islamabad/Rawalpindi. No other charges are added.
       </p>
     </div>
   );

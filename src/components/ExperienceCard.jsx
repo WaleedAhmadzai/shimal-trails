@@ -21,7 +21,9 @@ export default function ExperienceCard({ experience, inPlan = false, listSearch 
       <div className="card__body">
         <p className="card__region">{experience.region}</p>
         <h3 className="card__title">
-          <Link to={detailsPath} state={linkState}>{experience.title}</Link>
+          <Link to={detailsPath} state={linkState}>
+            {experience.title}
+          </Link>
         </h3>
         <TripFacts experience={experience} compact />
         <p className={`card__availability ${next ? 'is-open' : 'is-unavailable'}`}>
@@ -40,7 +42,12 @@ export default function ExperienceCard({ experience, inPlan = false, listSearch 
           <span className="price__amount">{formatPKR(experience.pricePerPerson)}</span>
           <span className="price__unit">per person</span>
         </p>
-        <Link className="btn btn--secondary btn--small" to={detailsPath} state={linkState} aria-label={`View dates and prices for ${experience.title}`}>
+        <Link
+          className="btn btn--secondary btn--small"
+          to={detailsPath}
+          state={linkState}
+          aria-label={`View dates and prices for ${experience.title}`}
+        >
           View dates
         </Link>
       </div>

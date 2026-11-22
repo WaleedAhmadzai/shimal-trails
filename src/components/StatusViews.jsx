@@ -14,7 +14,9 @@ export function ErrorState({ message, onRetry }) {
     <div className="status-view status-view--error" role="alert">
       <h2>Something went wrong</h2>
       <p>{message}</p>
-      <p className="muted">Your saved plan is safe. Try again, or check the demo settings if you turned on a failure.</p>
+      <p className="muted">
+        Your saved plan is safe. Try again, or check the demo settings if you turned on a failure.
+      </p>
       <div className="button-row">
         <button type="button" className="btn btn--primary" onClick={onRetry}>
           Retry loading

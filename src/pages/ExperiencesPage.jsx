@@ -60,7 +60,8 @@ export default function ExperiencesPage({ planIds = [] }) {
         <p className="eyebrow">All trips from Islamabad</p>
         <h1>Find a trip that fits your group</h1>
         <p className="lede">
-          Every card shows difficulty, age limit and the next date you can book, so you can compare before opening a trip.
+          Every card shows difficulty, age limit and the next date you can book, so you can compare before opening a
+          trip.
         </p>
       </header>
 
@@ -74,7 +75,10 @@ export default function ExperiencesPage({ planIds = [] }) {
               </Link>
             }
           >
-            <p>Our team is planning the next season. This is different from a search with no matches: there are no trips at all.</p>
+            <p>
+              Our team is planning the next season. This is different from a search with no matches: there are no trips
+              at all.
+            </p>
           </EmptyState>
         ) : (
           <>
@@ -83,12 +87,21 @@ export default function ExperiencesPage({ planIds = [] }) {
               Showing <strong>{results.length}</strong> of {experiences.length} trips
             </p>
             {results.length === 0 ? (
-              <NoMatches experiences={experiences} criteria={effectiveCriteria} onChange={updateCriteria} onReset={resetCriteria} />
+              <NoMatches
+                experiences={experiences}
+                criteria={effectiveCriteria}
+                onChange={updateCriteria}
+                onReset={resetCriteria}
+              />
             ) : (
               <ul className="card-grid">
                 {results.map((experience) => (
                   <li key={experience.id}>
-                    <ExperienceCard experience={experience} inPlan={planIds.includes(experience.id)} listSearch={listSearch} />
+                    <ExperienceCard
+                      experience={experience}
+                      inPlan={planIds.includes(experience.id)}
+                      listSearch={listSearch}
+                    />
                   </li>
                 ))}
               </ul>
@@ -122,7 +135,11 @@ function NoMatches({ experiences, criteria, onChange, onReset }) {
           <ul className="suggestion-list">
             {suggestions.map((suggestion) => (
               <li key={suggestion.key}>
-                <button type="button" className="btn btn--secondary btn--small" onClick={() => onChange(suggestion.patch)}>
+                <button
+                  type="button"
+                  className="btn btn--secondary btn--small"
+                  onClick={() => onChange(suggestion.patch)}
+                >
                   {suggestion.label} ({suggestion.count} {suggestion.count === 1 ? 'trip' : 'trips'})
                 </button>
               </li>

@@ -7,6 +7,7 @@ import PriceBreakdown from './PriceBreakdown.jsx';
 import { checkTravellerCount, MIN_TRAVELLERS, MAX_TRAVELLERS_PER_BOOKING } from '../rules/travellerLimit.js';
 import { describeMinAge } from '../rules/ageEligibility.js';
 import { calculateLineCost } from '../rules/pricing.js';
+import { formatPKR } from '../utils/format.js';
 import { getNextOpenDeparture, withStatus } from '../utils/experienceQueries.js';
 import { DEPARTURE_STATUS } from '../rules/bookingCutoff.js';
 
@@ -63,82 +64,116 @@ export default function BookingPanel({ experience, existingLine, onSave, onRemov
     : `${MIN_TRAVELLERS} to ${MAX_TRAVELLERS_PER_BOOKING} travellers per booking`;
 
   return (
-    <form className="panel booking-panel" onSubmit={handleSubmit} aria-labelledby="booking-heading" noValidate>
-      <h2 id="booking-heading" className="booking-panel__heading">
-        {existingLine ? 'Change this trip in your plan' : 'Book this trip'}
-      </h2>
-
-      {experience.minAge > 0 && (
-        <p className="notice notice--info small">
-          <strong>{describeMinAge(experience.minAge)}.</strong> The youngest traveller must be at least {experience.minAge}.
-          You will enter their age at checkout.
-        </p>
-      )}
-
-      {existingLine && existingDeparture && existingDeparture.status !== DEPARTURE_STATUS.OPEN && (
-        <p className="notice notice--warning small" role="status">
-          The date saved in your plan is no longer available. Pick another date below and update your plan.
-        </p>
-      )}
-
-      <DepartureOptions
-        name={`departure-${experience.id}`}
-        departures={experience.departures}
-        selectedId={departureId}
-        onSelect={(id) => {
-          setSavedMessage('');
-          setDepartureId(id);
-        }}
-      />
-
-      <Stepper
-        id="travellers"
-        label="Travellers"
-        value={travellersInput}
-        onChange={(value) => {
-          setSavedMessage('');
-          setTravellersInput(value);
-        }}
-        min={MIN_TRAVELLERS}
-        max={Math.max(MIN_TRAVELLERS, travellerCheck.max)}
-        hint={seatsHint}
-        hintId="travellers-hint"
-        error={selectedDeparture && !travellerCheck.ok ? travellerCheck.message : ''}
-        errorId="travellers-error"
-      />
-
-      <AddOnOptions idPrefix={`addon-${experience.id}`} addOns={experience.addOns} selectedIds={addOnIds} onToggle={toggleAddOn} />
-
-      <PriceBreakdown experience={experience} travellers={travellerCheck.ok ? travellers : 0} cost={cost} />
-
-      <button
-        type="submit"
-        className="btn btn--primary btn--block btn--large"
-        aria-disabled={blockReason || isUnchanged ? 'true' : undefined}
-        aria-describedby={blockReason ? 'booking-block-reason' : undefined}
+    <>
+      <form
+        id="booking-form"
+        className="panel booking-panel"
+        onSubmit={handleSubmit}
+        aria-labelledby="booking-heading"
+        noValidate
       >
-        {existingLine ? (isUnchanged ? '✓ Saved in your plan' : 'Update plan') : 'Add to plan'}
-      </button>
-      {blockReason && (
-        <p id="booking-block-reason" className="field__hint booking-panel__reason">
-          {blockReason}
-        </p>
-      )}
+        <h2 id="booking-heading" className="booking-panel__heading">
+          {existingLine ? 'Change this trip in your plan' : 'Book this trip'}
+        </h2>
 
-      {savedMessage && (
-        <div className="notice notice--success" role="status">
-          <p className="notice__title">✓ {savedMessage}</p>
-          <p>
-            <Link to="/plan">Review your plan and check out</Link>
+        {experience.minAge > 0 && (
+          <p className="notice notice--info small">
+            <strong>{describeMinAge(experience.minAge)}.</strong> The youngest traveller must be at least{' '}
+            {experience.minAge}. You will enter their age at checkout.
           </p>
-        </div>
-      )}
+        )}
 
-      {existingLine && (
-        <button type="button" className="btn btn--danger btn--small" onClick={onRemove}>
-          Remove this trip from my plan
+        {existingLine && existingDeparture && existingDeparture.status !== DEPARTURE_STATUS.OPEN && (
+          <p className="notice notice--warning small" role="status">
+            The date saved in your plan is no longer available. Pick another date below and update your plan.
+          </p>
+        )}
+
+        <DepartureOptions
+          name={`departure-${experience.id}`}
+          departures={experience.departures}
+          selectedId={departureId}
+          onSelect={(id) => {
+            setSavedMessage('');
+            setDepartureId(id);
+          }}
+        />
+
+        <Stepper
+          id="travellers"
+          label="Travellers"
+          value={travellersInput}
+          onChange={(value) => {
+            setSavedMessage('');
+            setTravellersInput(value);
+          }}
+          min={MIN_TRAVELLERS}
+          max={Math.max(MIN_TRAVELLERS, travellerCheck.max)}
+          hint={seatsHint}
+          hintId="travellers-hint"
+          error={selectedDeparture && !travellerCheck.ok ? travellerCheck.message : ''}
+          errorId="travellers-error"
+        />
+
+        <AddOnOptions
+          idPrefix={`addon-${experience.id}`}
+          addOns={experience.addOns}
+          selectedIds={addOnIds}
+          onToggle={toggleAddOn}
+        />
+
+        <PriceBreakdown experience={experience} travellers={travellerCheck.ok ? travellers : 0} cost={cost} />
+
+        <button
+          type="submit"
+          className="btn btn--primary btn--block btn--large"
+          aria-disabled={blockReason || isUnchanged ? 'true' : undefined}
+          aria-describedby={blockReason ? 'booking-block-reason' : undefined}
+        >
+          {existingLine ? (isUnchanged ? '✓ Saved in your plan' : 'Update plan') : 'Add to plan'}
         </button>
-      )}
-    </form>
+        {blockReason && (
+          <p id="booking-block-reason" className="field__hint booking-panel__reason">
+            {blockReason}
+          </p>
+        )}
+
+        {savedMessage && (
+          <div className="notice notice--success" role="status">
+            <p className="notice__title">✓ {savedMessage}</p>
+            <p>
+              <Link to="/plan">Review your plan and check out</Link>
+            </p>
+          </div>
+        )}
+
+        {existingLine && (
+          <button type="button" className="btn btn--danger btn--small" onClick={onRemove}>
+            Remove this trip from my plan
+          </button>
+        )}
+      </form>
+
+      {/* Small screens: the total and main action stay on screen while the
+        customer scrolls through dates and extras. It submits the same form. */}
+      <div className="mobile-bar">
+        <p className="mobile-bar__total">
+          <span className="small muted">
+            {travellerCheck.ok
+              ? `${travellers} ${travellers === 1 ? 'traveller' : 'travellers'} · total`
+              : 'Check travellers'}
+          </span>
+          <strong>{formatPKR(cost.total)}</strong>
+        </p>
+        <button
+          type="submit"
+          form="booking-form"
+          className="btn btn--primary"
+          aria-disabled={blockReason || isUnchanged ? 'true' : undefined}
+        >
+          {existingLine ? (isUnchanged ? '✓ In plan' : 'Update plan') : 'Add to plan'}
+        </button>
+      </div>
+    </>
   );
 }
