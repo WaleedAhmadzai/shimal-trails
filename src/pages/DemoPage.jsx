@@ -96,6 +96,15 @@ export default function DemoPage() {
             />
             Empty dataset (the loader returns no trips at all)
           </label>
+          <label className="checkbox" htmlFor="broken-image">
+            <input
+              id="broken-image"
+              type="checkbox"
+              checked={settings.brokenImage}
+              onChange={(e) => apply({ brokenImage: e.target.checked }, 'Broken image setting changed.')}
+            />
+            Broken image (the Rawalpindi food walk photo fails to load)
+          </label>
         </section>
 
         <section className="panel" aria-labelledby="availability-heading">

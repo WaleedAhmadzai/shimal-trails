@@ -76,7 +76,7 @@ Open **`/demo`** (also linked in the footer). Settings are saved in localStorage
 | Date closed since saved | Add Fairy Meadows on the date 5 days away → `/demo` → set *Pretend today is 3 days later* → `/plan` |
 | Corrupted saved data | `/demo` → *Corrupt saved plan and reload* → plan resets with a notice |
 | Invalid form input | `/checkout` → submit empty or with phone `12345`, age `15` with a 16+ trip; other fields keep their values |
-| Missing image | Search `rawalpindi`: the food walk has no image and shows a labelled placeholder |
+| Missing image | `/demo` → *Broken image* → search `rawalpindi`: the photo fails to load and a labelled placeholder appears |
 
 ## Simulated operations and known limitations
 
@@ -116,4 +116,21 @@ The site is a single-page app. `vercel.json` (Vercel) and `public/_redirects` (N
 
 ## Credits
 
-All trip illustrations are original SVGs made for this project. No templates or UI kits are used; only `react-router-dom` is added to React.
+No templates or UI kits are used; only `react-router-dom` is added to React. The logo and layout are original.
+
+Trip photos come from Wikimedia Commons under the licences below. Each was cropped to 16:9 and resized; the original is linked. The credit is also shown under the photo on each trip page (`src/data/photoCredits.js`, `src/components/PhotoCredit.jsx`).
+
+| Trip | Photo | Author | Licence |
+| --- | --- | --- | --- |
+| Margalla Sunrise Hike | [Islamabad from Margalla Hills.jpg](https://commons.wikimedia.org/wiki/File:Islamabad_from_Margalla_Hills.jpg) | Zain.3nov | CC BY-SA 4.0 |
+| Khanpur Lake | [Khanpur Lake Pakistan 5.jpg](https://commons.wikimedia.org/wiki/File:Khanpur_Lake_Pakistan_5.jpg) | King Eliot | CC BY-SA 4.0 |
+| Nathiagali weekend | [Nathiagali Hotel Summer Retreat 07.jpg](https://commons.wikimedia.org/wiki/File:Nathiagali_Hotel_Summer_Retreat_07.jpg) | Ymblanter | CC BY-SA 4.0 |
+| Naran / Saiful Muluk | [Saiful muluk during June.JPG](https://commons.wikimedia.org/wiki/File:Saiful_muluk_during_June.JPG) | Almazi at English Wikipedia | Public domain |
+| Swat and Kalam | [Swat River in Kalam town, Swat.jpg](https://commons.wikimedia.org/wiki/File:Swat_River_in_Kalam_town,_Swat.jpg) | Shahzaib Damn Cruze | CC BY-SA 4.0 |
+| Neelum / Arang Kel | [Arang Kel Morning.jpg](https://commons.wikimedia.org/wiki/File:Arang_Kel_Morning.jpg) | Kashifrehan1805 | CC BY-SA 4.0 |
+| Fairy Meadows (also home banner) | [Nanga Parbat (Fairy Meadows).jpg](https://commons.wikimedia.org/wiki/File:Nanga_Parbat_(Fairy_Meadows).jpg) | Zaki Khan89 | CC BY-SA 4.0 |
+| Hunza and Khunjerab | [Hunza Valley, view from Eagle's Nest.jpg](https://commons.wikimedia.org/wiki/File:Hunza_Valley,_view_from_Eagle%27s_Nest.jpg) | Alllexxxis | CC BY-SA 4.0 |
+| Skardu / Deosai | [The Land of Giants, Deosai.jpg](https://commons.wikimedia.org/wiki/File:The_Land_of_Giants,_Deosai.jpg) | Qammer Wazir | CC BY-SA 4.0 |
+| Kumrat Valley | [Kumrat Valley.jpg](https://commons.wikimedia.org/wiki/File:Kumrat_Valley.jpg) | Salman Shah | CC BY-SA 3.0 |
+| Ratti Gali | [Ratti Gali Lake .jpg](https://commons.wikimedia.org/wiki/File:Ratti_Gali_Lake_.jpg) | Shahzeb Baig | CC BY-SA 4.0 |
+| Rawalpindi food walk | [Rawalpindi Bazaar.jpg](https://commons.wikimedia.org/wiki/File:Rawalpindi_Bazaar.jpg) | Trueblood786 at English Wikipedia | CC BY-SA 3.0 |

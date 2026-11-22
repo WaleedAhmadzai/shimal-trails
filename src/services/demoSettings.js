@@ -9,6 +9,7 @@ export const DEFAULT_DEMO_SETTINGS = {
   dayOffset: 0, // pretend today is N days later (tests the booking cutoff)
   seatOverrides: {}, // { [departureId]: seatsLeft } — simulate seats selling
   slowNetwork: false, // longer loading delay so the loading state is visible
+  brokenImage: false, // one trip's photo URL points to a missing file
 };
 
 export function getDemoSettings() {

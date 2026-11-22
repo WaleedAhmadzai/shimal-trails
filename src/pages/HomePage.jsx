@@ -3,6 +3,9 @@ import { useData } from '../context/DataContext.jsx';
 import DataGate from '../components/DataGate.jsx';
 import ExperienceCard from '../components/ExperienceCard.jsx';
 import { getNextOpenDeparture } from '../utils/experienceQueries.js';
+import { photoCredits } from '../data/photoCredits.js';
+
+const heroCredit = photoCredits['fairy-meadows'];
 
 const STEPS = [
   { title: 'Compare', text: 'See difficulty, age limit, altitude and the next open date on every trip card.' },
@@ -43,6 +46,10 @@ export default function HomePage({ planIds = [] }) {
             </Link>
           </div>
         </div>
+        <p className="hero__credit">
+          Fairy Meadows. Photo: <a href={heroCredit.sourceUrl}>{heroCredit.author}</a>,{' '}
+          <a href={heroCredit.licenseUrl}>{heroCredit.license}</a>
+        </p>
       </section>
 
       <section className="container section" aria-labelledby="how-heading">

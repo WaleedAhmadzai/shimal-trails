@@ -6,6 +6,7 @@ import { getDemoSettings, saveDemoSettings } from './demoSettings.js';
 
 const NORMAL_DELAY_MS = 600;
 const SLOW_DELAY_MS = 2500;
+export const BROKEN_IMAGE_TRIP = 'rawal-heritage-evening';
 
 function wait(ms, signal) {
   return new Promise((resolve, reject) => {
@@ -40,6 +41,8 @@ export async function fetchExperiences({ signal } = {}) {
   // demo seat overrides to simulate seats being sold to other customers.
   return experiences.map((experience) => ({
     ...experience,
+    // Demo: point one photo at a file that does not exist, to test the fallback.
+    ...(settings.brokenImage && experience.id === BROKEN_IMAGE_TRIP ? { image: '/photos/missing.jpg' } : {}),
     departures: experience.departures.map((departure) => {
       const override = settings.seatOverrides[departure.id];
       return {

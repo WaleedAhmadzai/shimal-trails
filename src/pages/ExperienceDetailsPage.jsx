@@ -5,6 +5,7 @@ import ImageWithFallback from '../components/ImageWithFallback.jsx';
 import TripFacts from '../components/TripFacts.jsx';
 import { EmptyState } from '../components/StatusViews.jsx';
 import BookingPanel from '../components/BookingPanel.jsx';
+import PhotoCredit from '../components/PhotoCredit.jsx';
 import { usePlan } from '../context/PlanContext.jsx';
 import { formatPKR } from '../utils/format.js';
 
@@ -70,9 +71,12 @@ function DetailsContent() {
       </nav>
       <div className="details">
         <div className="details__head">
-          <div className="details__media">
-            <ImageWithFallback src={experience.image} alt={experience.imageAlt} label={experience.title} />
-          </div>
+          <figure className="details__figure">
+            <div className="details__media">
+              <ImageWithFallback src={experience.image} alt={experience.imageAlt} label={experience.title} />
+            </div>
+            {experience.image && experience.imageCredit && <PhotoCredit credit={experience.imageCredit} />}
+          </figure>
           <p className="eyebrow">
             {experience.category} · {experience.region}
           </p>

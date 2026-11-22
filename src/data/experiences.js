@@ -3,19 +3,21 @@
 // plans can be matched against the latest data when they are restored.
 //
 // Departure dates are stored as `daysFromToday` so the demo always has
-// upcoming trips. dateUtils.js turns them into real calendar dates.
+// upcoming trips. utils/format.js turns them into real calendar dates.
 
-import hunza from '../assets/trips/hunza.svg';
-import fairyMeadows from '../assets/trips/fairy-meadows.svg';
-import naran from '../assets/trips/naran.svg';
-import skardu from '../assets/trips/skardu.svg';
-import margalla from '../assets/trips/margalla.svg';
-import nathiagali from '../assets/trips/nathiagali.svg';
-import neelum from '../assets/trips/neelum.svg';
-import swat from '../assets/trips/swat.svg';
-import khanpur from '../assets/trips/khanpur.svg';
-import kumrat from '../assets/trips/kumrat.svg';
-import rattiGali from '../assets/trips/ratti-gali.svg';
+import margallaSunriseHikePhoto from '../assets/photos/margalla-sunrise-hike.jpg';
+import khanpurLakeDayPhoto from '../assets/photos/khanpur-lake-day.jpg';
+import nathiagaliWeekendPhoto from '../assets/photos/nathiagali-weekend.jpg';
+import naranSaifulMalookPhoto from '../assets/photos/naran-saiful-malook.jpg';
+import swatKalamPhoto from '../assets/photos/swat-kalam.jpg';
+import neelumArangKelPhoto from '../assets/photos/neelum-arang-kel.jpg';
+import fairyMeadowsPhoto from '../assets/photos/fairy-meadows.jpg';
+import hunzaKhunjerabPhoto from '../assets/photos/hunza-khunjerab.jpg';
+import skarduShangrilaDeosaiPhoto from '../assets/photos/skardu-shangrila-deosai.jpg';
+import kumratValleyCampPhoto from '../assets/photos/kumrat-valley-camp.jpg';
+import rattiGaliLakeTrekPhoto from '../assets/photos/ratti-gali-lake-trek.jpg';
+import rawalHeritageEveningPhoto from '../assets/photos/rawal-heritage-evening.jpg';
+import { photoCredits } from './photoCredits.js';
 
 export const CATEGORIES = ['Day trip', 'Weekend', 'Road trip', 'Trek', 'Adventure activity'];
 export const DIFFICULTIES = ['Easy', 'Moderate', 'Challenging'];
@@ -31,8 +33,9 @@ export const experiences = [
     maxAltitudeM: 1150,
     minAge: 10,
     pricePerPerson: 3500,
-    image: margalla,
-    imageAlt: 'Illustration of green Margalla ridges at sunrise with a winding trail',
+    image: margallaSunriseHikePhoto,
+    imageAlt: 'Green Margalla Hills sloping down towards Islamabad city',
+    imageCredit: photoCredits['margalla-sunrise-hike'],
     summary: 'A 3.5-hour guided climb up Trail 5 with breakfast at the top and transport back down.',
     description:
       'We meet at the Trail 5 car park before first light and climb steadily through pine and scrub to the Pir Sohawa ridge. Breakfast is served at a ridge-top cafe, then a van brings you back to the start. Expect about 700 m of ascent on a rocky, well-marked path.',
@@ -55,8 +58,9 @@ export const experiences = [
     maxAltitudeM: 600,
     minAge: 8,
     pricePerPerson: 6500,
-    image: khanpur,
-    imageAlt: 'Illustration of a turquoise lake with kayaks below rocky hills',
+    image: khanpurLakeDayPhoto,
+    imageAlt: 'Turquoise water of Khanpur Lake with low hills behind',
+    imageCredit: photoCredits['khanpur-lake-day'],
     summary: 'Kayaking, a supervised cliff jump and lunch at the lake, an hour from Islamabad.',
     description:
       'A relaxed day on Khanpur Lake. Our instructors run a safety briefing, then you kayak across to the cliffs where confident swimmers can try a supervised jump. Life jackets are provided for everyone and lunch is served on the shore.',
@@ -79,8 +83,9 @@ export const experiences = [
     maxAltitudeM: 2800,
     minAge: 0,
     pricePerPerson: 14500,
-    image: nathiagali,
-    imageAlt: 'Illustration of pine forest hills with a small cottage and mist',
+    image: nathiagaliWeekendPhoto,
+    imageAlt: 'Tall pine trees on a misty hillside in Nathiagali',
+    imageCredit: photoCredits['nathiagali-weekend'],
     summary: 'Pine forest walks, the Mushkpuri top hike and a night in a Nathiagali guest house.',
     description:
       'An easy escape for families and first-timers. Saturday covers Ayubia and the Pipeline Track, Sunday morning is the optional Mushkpuri top hike before the drive home. Rooms are shared by two to four people.',
@@ -105,8 +110,9 @@ export const experiences = [
     maxAltitudeM: 4170,
     minAge: 0,
     pricePerPerson: 26500,
-    image: naran,
-    imageAlt: 'Illustration of a blue alpine lake beneath a snow-capped peak',
+    image: naranSaifulMalookPhoto,
+    imageAlt: 'Lake Saiful Muluk below snowy mountains under a cloudy sky',
+    imageCredit: photoCredits['naran-saiful-malook'],
     summary: 'The Kaghan valley road, a jeep to Lake Saif-ul-Malook and the view from Babusar Top.',
     description:
       'Three days up the Kaghan valley. We stay two nights in Naran, take local jeeps up to Lake Saif-ul-Malook and drive to Babusar Top on day two. Long drives of six to seven hours on day one and three.',
@@ -132,8 +138,9 @@ export const experiences = [
     maxAltitudeM: 2900,
     minAge: 0,
     pricePerPerson: 34000,
-    image: swat,
-    imageAlt: 'Illustration of a river valley with terraced fields and forested slopes',
+    image: swatKalamPhoto,
+    imageAlt: 'Huts along the Swat River in Kalam at dusk',
+    imageCredit: photoCredits['swat-kalam'],
     summary: 'Mingora, the Malam Jabba chairlift, Kalam and the Ushu forest in four unhurried days.',
     description:
       'A gentle road trip through Swat. We visit the Swat Museum in Saidu Sharif, ride the chairlift at Malam Jabba, and spend two nights in Kalam with a morning walk in the Ushu forest.',
@@ -158,8 +165,9 @@ export const experiences = [
     maxAltitudeM: 2400,
     minAge: 12,
     pricePerPerson: 31000,
-    image: neelum,
-    imageAlt: 'Illustration of a river through a forested valley with a meadow village above',
+    image: neelumArangKelPhoto,
+    imageAlt: 'Wooden houses of Arang Kel on a green meadow surrounded by pine forest',
+    imageCredit: photoCredits['neelum-arang-kel'],
     summary: 'Keran and Sharda by the Neelum river, then the cable car and steep hike to Arang Kel.',
     description:
       'Four days along the Neelum river. The highlight is Arang Kel, reached by a short cable car across the river and a steep 90-minute climb through forest to a meadow village. Nights are in guest houses with shared bathrooms.',
@@ -182,8 +190,9 @@ export const experiences = [
     maxAltitudeM: 3967,
     minAge: 16,
     pricePerPerson: 47000,
-    image: fairyMeadows,
-    imageAlt: 'Illustration of a large snow-covered mountain above green meadows and pine trees',
+    image: fairyMeadowsPhoto,
+    imageAlt: 'Snow-covered Nanga Parbat above the grassy meadow and pine trees of Fairy Meadows',
+    imageCredit: photoCredits['fairy-meadows'],
     summary: 'The Raikot jeep track, two nights at Fairy Meadows and a 7 to 9 hour base camp hike.',
     description:
       'For fit walkers. After a long drive and the Raikot bridge jeep track, you hike 3 to 4 hours up to Fairy Meadows. Day three is the base camp hike: 7 to 9 hours on forest trail and glacier moraine. Nights at the meadows are in cabins with shared facilities.',
@@ -215,8 +224,9 @@ export const experiences = [
     maxAltitudeM: 4693,
     minAge: 0,
     pricePerPerson: 58000,
-    image: hunza,
-    imageAlt: 'Illustration of jagged peaks above a valley with apricot trees and a fort',
+    image: hunzaKhunjerabPhoto,
+    imageAlt: 'Hunza valley with poplar trees and terraced villages below high peaks',
+    imageCredit: photoCredits['hunza-khunjerab'],
     summary: 'Karimabad, Baltit Fort, Attabad Lake and the border crossing at Khunjerab.',
     description:
       'Up the Karakoram Highway to Hunza. Visit Baltit and Altit forts, take a boat on Attabad Lake, cross the Passu suspension bridge viewpoint and drive to the Pakistan-China border at Khunjerab (4,693 m). Most of the trip is by road with short walks.',
@@ -247,8 +257,9 @@ export const experiences = [
     maxAltitudeM: 4114,
     minAge: 8,
     pricePerPerson: 69500,
-    image: skardu,
-    imageAlt: 'Illustration of a cold desert with sand dunes in front of grey mountains',
+    image: skarduShangrilaDeosaiPhoto,
+    imageAlt: 'Green Deosai plains with a winding stream and snowy peaks',
+    imageCredit: photoCredits['skardu-shangrila-deosai'],
     summary: 'Shangrila and Upper Kachura lakes, the Sarfaranga cold desert and a day on Deosai.',
     description:
       'A week in Baltistan. Long drives on the Skardu road, nights in Skardu town, and day trips to the Kachura lakes, the Sarfaranga cold desert and the Deosai plains by jeep. Deosai sits above 4,000 m, so warm clothing is essential.',
@@ -270,8 +281,9 @@ export const experiences = [
     maxAltitudeM: 2400,
     minAge: 10,
     pricePerPerson: 22500,
-    image: kumrat,
-    imageAlt: 'Illustration of tents beside a river under tall deodar trees',
+    image: kumratValleyCampPhoto,
+    imageAlt: 'Clear blue river flowing through pine forest in Kumrat Valley',
+    imageCredit: photoCredits['kumrat-valley-camp'],
     summary: 'Two nights in tents by the Panjkora river, with a jeep ride to Jahaz Banda base.',
     description:
       'Camping in Kumrat. Expect a long drive, a bumpy jeep section and two nights in shared tents beside the river. Day two is an optional walk towards the waterfall at Kala Chashma.',
@@ -299,8 +311,9 @@ export const experiences = [
     maxAltitudeM: 3700,
     minAge: 16,
     pricePerPerson: 28500,
-    image: rattiGali,
-    imageAlt: 'Illustration of a starry night sky above a high plateau with a tent',
+    image: rattiGaliLakeTrekPhoto,
+    imageAlt: 'Ratti Gali lake reflecting snow patches and rocky ridges',
+    imageCredit: photoCredits['ratti-gali-lake-trek'],
     summary: 'A jeep to Dowarian, a steep 5-hour climb and a night camping beside Ratti Gali lake.',
     description:
       'A short but demanding trek. After the drive to Dowarian, a jeep climbs to the base camp and you hike about five hours to the glacial lake at 3,700 m. Night temperatures fall close to zero and the altitude can affect anyone, so this trip is limited to travellers aged 16 and over.',
@@ -323,7 +336,6 @@ export const experiences = [
   },
   {
     id: 'rawal-heritage-evening',
-    // Intentionally has no image so the image fallback can be checked.
     title: 'Rawalpindi Heritage Food Walk',
     region: 'Rawalpindi, Punjab',
     category: 'Day trip',
@@ -332,8 +344,9 @@ export const experiences = [
     maxAltitudeM: 510,
     minAge: 0,
     pricePerPerson: 4000,
-    image: null,
-    imageAlt: '',
+    image: rawalHeritageEveningPhoto,
+    imageAlt: 'Busy street in an old Rawalpindi bazaar with a fruit cart',
+    imageCredit: photoCredits['rawal-heritage-evening'],
     summary: 'An evening walk through Raja Bazaar and Saddar with six food tasting stops.',
     description:
       'A three-hour evening walk with a local guide through the old bazaars of Rawalpindi, from Raja Bazaar to Saddar. Six tasting stops are included, from chana chaat to kheer.',

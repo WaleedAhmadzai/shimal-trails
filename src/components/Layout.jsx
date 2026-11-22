@@ -15,6 +15,7 @@ export default function Layout({ planCount, planIssues }) {
     demo.failMode !== 'off' ||
     demo.emptyDataset ||
     demo.slowNetwork ||
+    demo.brokenImage ||
     demo.dayOffset !== DEFAULT_DEMO_SETTINGS.dayOffset ||
     Object.keys(demo.seatOverrides).length > 0;
 

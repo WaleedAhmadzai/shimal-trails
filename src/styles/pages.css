@@ -21,7 +21,7 @@
   color: #fff;
   background:
     linear-gradient(180deg, rgb(27 35 56 / 0.2), rgb(27 35 56 / 0.85)),
-    url('../assets/trips/fairy-meadows.svg') center / cover no-repeat;
+    url('../assets/photos/fairy-meadows.jpg') center 30% / cover no-repeat;
   padding-block: var(--space-8);
 }
 .hero h1 {
@@ -108,11 +108,21 @@
 .details__from {
   margin-bottom: var(--space-2);
 }
+.details__figure {
+  margin: 0 0 var(--space-5);
+}
+.photo-credit {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  margin-top: var(--space-2);
+}
+.photo-credit a {
+  color: inherit;
+}
 .details__media {
   border-radius: var(--radius-lg);
   overflow: hidden;
   aspect-ratio: 16 / 8;
-  margin-bottom: var(--space-5);
   background: var(--color-unavailable-bg);
 }
 .details__media img,
@@ -334,4 +344,19 @@
 }
 .demo__footer {
   margin-top: var(--space-6);
+}
+
+.hero {
+  position: relative;
+}
+.hero__credit {
+  position: absolute;
+  right: var(--space-4);
+  bottom: var(--space-2);
+  margin: 0;
+  font-size: var(--text-xs);
+  color: rgb(255 255 255 / 0.85);
+}
+.hero__credit a {
+  color: inherit;
 }
