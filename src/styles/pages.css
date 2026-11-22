@@ -1,0 +1,34 @@
+.page { padding-block: var(--space-6) var(--space-8); }
+.page-header { margin-bottom: var(--space-5); }
+.section { padding-block: var(--space-6); }
+.section__header { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-4); }
+
+/* ---------- Home ---------- */
+.hero {
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgb(27 35 56 / 0.2), rgb(27 35 56 / 0.85)),
+    url('../assets/trips/fairy-meadows.svg') center / cover no-repeat;
+  padding-block: var(--space-8);
+}
+.hero h1 { color: #fff; max-width: 20ch; }
+.hero__lede { font-size: var(--text-lg); max-width: 52ch; color: #f1ece4; margin-bottom: var(--space-5); }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.steps__item { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: var(--radius); padding: var(--space-4); }
+.steps__item p { margin: 0; color: var(--color-ink-soft); }
+.steps__number { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--color-ink); color: #fff; font-weight: 700; margin-bottom: var(--space-2); }
+
+/* ---------- Details ---------- */
+.breadcrumb { margin-bottom: var(--space-4); }
+.breadcrumb a { font-weight: 600; display: inline-flex; min-height: 44px; align-items: center; }
+.details { display: grid; gap: var(--space-6); }
+@media (min-width: 1024px) {
+  .details { grid-template-columns: minmax(0, 1fr) 400px; align-items: start; }
+  .details__aside { position: sticky; top: 84px; }
+}
+.details__media { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16 / 8; margin-bottom: var(--space-5); background: var(--color-unavailable-bg); }
+.details__media img, .details__media .image-fallback { width: 100%; height: 100%; object-fit: cover; }
+.details__title { font-size: var(--text-2xl); }
+.details__section { padding-top: var(--space-5); margin-top: var(--space-5); border-top: 1px solid var(--color-line); }
+.details__columns { display: grid; gap: var(--space-5); }
+@media (min-width: 640px) { .details__columns { grid-template-columns: 1fr 1fr; } }

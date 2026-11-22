@@ -1,11 +1,25 @@
-import { experiences } from './data/experiences.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { DataProvider } from './context/DataContext.jsx';
+import Layout from './components/Layout.jsx';
+import HomePage from './pages/HomePage.jsx';
+import ExperiencesPage from './pages/ExperiencesPage.jsx';
+import ExperienceDetailsPage from './pages/ExperienceDetailsPage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
+import './styles/global.css';
 
-// Milestone 1 placeholder: confirms the business data loads.
 export default function App() {
   return (
-    <main>
-      <h1>Shimal Trails</h1>
-      <p>{experiences.length} experiences loaded.</p>
-    </main>
+    <BrowserRouter>
+      <DataProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="experiences" element={<ExperiencesPage />} />
+            <Route path="experiences/:experienceId" element={<ExperienceDetailsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </DataProvider>
+    </BrowserRouter>
   );
 }

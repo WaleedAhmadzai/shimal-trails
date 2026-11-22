@@ -15,7 +15,7 @@ import neelum from '../assets/trips/neelum.svg';
 import swat from '../assets/trips/swat.svg';
 import khanpur from '../assets/trips/khanpur.svg';
 import kumrat from '../assets/trips/kumrat.svg';
-import deosai from '../assets/trips/deosai.svg';
+import rattiGali from '../assets/trips/ratti-gali.svg';
 
 export const CATEGORIES = ['Day trip', 'Weekend', 'Road trip', 'Trek', 'Adventure activity'];
 export const DIFFICULTIES = ['Easy', 'Moderate', 'Challenging'];
@@ -272,26 +272,29 @@ export const experiences = [
     ],
   },
   {
-    id: 'deosai-stargazing',
-    title: 'Deosai Plains Overnight Stargazing Camp',
-    region: 'Deosai National Park, Gilgit-Baltistan',
-    category: 'Adventure activity',
+    id: 'ratti-gali-lake-trek',
+    title: 'Ratti Gali Lake Trek and High Camp',
+    region: 'Neelum, Azad Kashmir',
+    category: 'Trek',
     difficulty: 'Challenging',
-    durationDays: 2,
-    maxAltitudeM: 4114,
+    durationDays: 3,
+    maxAltitudeM: 3700,
     minAge: 16,
-    pricePerPerson: 24000,
-    image: deosai,
+    pricePerPerson: 28500,
+    image: rattiGali,
     imageAlt: 'Illustration of a starry night sky above a high plateau with a tent',
-    summary: 'A night at 4,000 m near Sheosar lake with a guide and telescope. Starts in Skardu.',
+    summary: 'A jeep to Dowarian, a steep 5-hour climb and a night camping beside Ratti Gali lake.',
     description:
-      'For travellers already in Skardu. A jeep takes you up to Deosai, where we camp near Sheosar lake. Night temperatures fall below zero even in summer, and altitude can affect anyone, so this camp is limited to adults and older teens.',
-    includes: ['Jeep from Skardu', '1 night camping', 'Dinner and breakfast', 'Telescope session', 'Guide'],
-    notIncluded: ['Travel to Skardu', 'Sleeping bag'],
-    addOns: [{ id: 'sleeping-bag', label: 'Four-season sleeping bag hire', pricePerPerson: 2000 }],
+      'A short but demanding trek. After the drive to Dowarian, a jeep climbs to the base camp and you hike about five hours to the glacial lake at 3,700 m. Night temperatures fall close to zero and the altitude can affect anyone, so this trip is limited to travellers aged 16 and over.',
+    includes: ['Return transport', 'Jeep to base camp', '1 night guest house, 1 night camping', 'All meals on the trek', 'Guide'],
+    notIncluded: ['Sleeping bag', 'Porter for personal bags'],
+    addOns: [
+      { id: 'sleeping-bag', label: 'Four-season sleeping bag hire', pricePerPerson: 2000 },
+      { id: 'porter', label: 'Porter for personal bag (up to 10 kg)', pricePerPerson: 3500 },
+    ],
     departures: [
-      { id: 'dso-1', daysFromToday: 2, seatsLeft: 6 },
-      { id: 'dso-2', daysFromToday: 16, seatsLeft: 8 },
+      { id: 'rtg-1', daysFromToday: 2, seatsLeft: 6 },
+      { id: 'rtg-2', daysFromToday: 16, seatsLeft: 8 },
     ],
   },
   {
