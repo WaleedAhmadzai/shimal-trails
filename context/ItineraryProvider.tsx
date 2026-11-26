@@ -94,6 +94,24 @@ function sanitise(raw: unknown, fallback: Itinerary): Itinerary {
   };
 }
 
+/** The next 10th of `month` that is at least `minDays` after `today`. */
+export function nextDateInMonth(today: string, month: number, minDays = 7) {
+  const earliest = addDays(today, minDays);
+  let year = Number(today.slice(0, 4));
+  for (let i = 0; i < 3; i++, year++) {
+    const candidate = `${year}-${String(month).padStart(2, "0")}-10`;
+    if (candidate >= earliest) return candidate;
+  }
+  return earliest;
+}
+
+/** Three weeks out if that is in the open season (May–Oct), else next June. */
+function defaultStartDate(today: string) {
+  const inThreeWeeks = addDays(today, 21);
+  const month = Number(inThreeWeeks.slice(5, 7));
+  return month >= 5 && month <= 10 ? inThreeWeeks : nextDateInMonth(today, 6);
+}
+
 export function todayIso() {
   const now = new Date();
   return new Date(now.getTime() - now.getTimezoneOffset() * 60_000).toISOString().slice(0, 10);
@@ -121,7 +139,7 @@ export function ItineraryProvider({ children }: { children: React.ReactNode }) {
 
   // Read saved data only after mount, so server and client HTML match.
   useEffect(() => {
-    const fallback: Itinerary = { ...initialState, startDate: addDays(todayIso(), 21) };
+    const fallback: Itinerary = { ...initialState, startDate: defaultStartDate(todayIso()) };
     let saved: unknown = null;
     try {
       saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY) ?? "null");
@@ -153,7 +171,13 @@ export function ItineraryProvider({ children }: { children: React.ReactNode }) {
       updateSettings: (settings) => dispatch({ type: "UPDATE_SETTINGS", settings }),
       loadTemplate: (id) => {
         const template = getTemplate(id);
-        if (template) dispatch({ type: "REPLACE", itinerary: { stops: template.stops } });
+        if (template) {
+          // Move the trip to the template's best month so every stop is open.
+          dispatch({
+            type: "REPLACE",
+            itinerary: { stops: template.stops, startDate: nextDateInMonth(todayIso(), template.bestMonth) },
+          });
+        }
       },
       replace: (next) => dispatch({ type: "REPLACE", itinerary: next }),
       clear: () => dispatch({ type: "CLEAR" }),

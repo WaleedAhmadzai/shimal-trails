@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertCircle, ArrowRight, Loader2 } from "lucide-react";
 import { Button } from "@/components/common/Button";
 import { TripSummary } from "@/components/itinerary/TripSummary";
@@ -34,7 +34,16 @@ export function TripRequestForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
   const [submitted, setSubmitted] = useState<{ reference: string; name: string; contactBy: string; summary: string } | null>(null);
   const [prefilled, setPrefilled] = useState(false);
+  const [failedAttempts, setFailedAttempts] = useState(0);
   const summaryRef = useRef<HTMLDivElement>(null);
+
+  // After a failed submit, move focus to the error summary so keyboard and
+  // screen-reader users land on the list of problems.
+  useEffect(() => {
+    if (failedAttempts === 0) return;
+    summaryRef.current?.focus({ preventScroll: true });
+    summaryRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [failedAttempts]);
 
   const today = hydrated ? todayIso() : "2026-01-01";
   const trip = useMemo(() => planTrip(itinerary, today), [itinerary, today]);
@@ -72,11 +81,9 @@ export function TripRequestForm() {
     const found = validateTripRequest(form, today);
     setErrors(found);
     setTouched(Object.fromEntries(VALIDATED_FIELDS.map((f) => [f, true])));
-    const firstInvalid = VALIDATED_FIELDS.find((f) => found[f]);
-    if (firstInvalid) {
-      summaryRef.current?.focus();
-      document.getElementById(firstInvalid)?.focus({ preventScroll: true });
-      summaryRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (VALIDATED_FIELDS.some((f) => found[f])) {
+      // The error summary renders after this state update; focus it then.
+      setFailedAttempts((n) => n + 1);
       return;
     }
     setStatus("sending");

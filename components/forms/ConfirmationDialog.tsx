@@ -50,13 +50,13 @@ export function ConfirmationDialog({ open, reference, name, contactBy, summary, 
           A local operator will reply by {contactBy} within 24 hours with a quote for your trip.
         </p>
         <dl className="mt-6 space-y-3 rounded-2xl bg-paper p-5 text-sm">
-          <div className="flex justify-between gap-4">
+          <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
             <dt className="text-muted">Reference</dt>
-            <dd className="font-mono font-medium">{reference}</dd>
+            <dd className="font-mono font-medium whitespace-nowrap">{reference}</dd>
           </div>
-          <div className="flex justify-between gap-4">
+          <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:gap-4">
             <dt className="text-muted">Trip</dt>
-            <dd className="text-right">{summary}</dd>
+            <dd className="sm:text-right">{summary}</dd>
           </div>
         </dl>
         <p className="mt-4 text-xs text-muted">This is a demo: nothing was sent and no details were stored.</p>

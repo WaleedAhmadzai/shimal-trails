@@ -44,7 +44,7 @@ export function DestinationImage({ destination, sizes, priority = false, classNa
       className={cn("absolute inset-0 bg-gradient-to-br text-snow", POSTER_TONES[seed % POSTER_TONES.length], className)}
     >
       <Topography seed={seed} className="text-snow/15" />
-      <span className="absolute right-4 top-4 font-mono text-[0.65rem] tracking-[0.2em] text-snow/60">
+      <span className="absolute inset-x-0 top-1/3 text-center font-display text-[min(18vw,7rem)] leading-none text-snow/[0.07] select-none">
         {formatAltitude(destination.altitudeM)}
       </span>
     </div>
