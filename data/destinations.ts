@@ -64,6 +64,7 @@ export const destinations: Destination[] = [
     thingsToDo: ["Take a boat or jet-ski ride", "Stop at the viewpoints above the tunnels", "Stay a night at a lakeside resort"],
     tips: ["Life jackets are not always offered; ask for one.", "Water is very cold all year; swimming is not advised."],
     permitNote: FOREIGNER_GB,
+    photo: photos.attabad,
     sources: ["https://en.wikipedia.org/wiki/Attabad_Lake"],
   },
   {
@@ -90,6 +91,7 @@ export const destinations: Destination[] = [
     thingsToDo: ["Cross the Hussaini bridge", "Hike to the Passu Glacier viewpoint", "Visit the Gulmit carpet centre"],
     tips: ["The bridge sways; go one or two at a time.", "Start glacier hikes early, before the afternoon wind."],
     permitNote: FOREIGNER_GB,
+    photo: photos.passu,
     sources: ["https://en.wikipedia.org/wiki/Passu", "https://en.wikipedia.org/wiki/Gulmit"],
   },
   {
@@ -117,6 +119,7 @@ export const destinations: Destination[] = [
     thingsToDo: ["Photograph the border gate", "Watch for ibex in the park", "Stop at Sost for tea on the way back"],
     tips: ["Visit as a day trip; do not sleep this high without acclimatising.", "Move slowly at the top; headaches are common.", "National park entry fee is charged at Dih."],
     permitNote: "Foreigners may need to show a passport at the park and border posts.",
+    photo: photos.khunjerab,
     sources: ["https://en.wikipedia.org/wiki/Khunjerab_Pass"],
   },
   {
@@ -143,6 +146,7 @@ export const destinations: Destination[] = [
     thingsToDo: ["Jeep to the upper lakes", "Picnic by Bashkiri Lake", "Try skiing in January"],
     tips: ["Hire a local jeep in Nomal or Gilgit; cars cannot manage the track.", "The upper lakes are often snowbound until June."],
     permitNote: FOREIGNER_GB,
+    photo: photos.naltar,
     sources: ["https://en.wikipedia.org/wiki/Naltar_Valley"],
   },
   {
@@ -197,6 +201,7 @@ export const destinations: Destination[] = [
     thingsToDo: ["Boat on Upper Kachura", "Watch sunset on the Katpana dunes", "Visit Manthal Buddha rock"],
     tips: ["Flights are often cancelled for weather; keep a spare day.", "The road via Jaglot is narrow and slow; avoid driving after dark."],
     permitNote: FOREIGNER_GB,
+    photo: photos.skardu,
     sources: ["https://en.wikipedia.org/wiki/Skardu"],
   },
   {
@@ -251,6 +256,7 @@ export const destinations: Destination[] = [
     thingsToDo: ["Tour the fort museum", "Ride a quad bike on the dunes", "Walk to Blind Lake"],
     tips: ["Book the fort hotel early in summer.", "Combine with Skardu as a half-day trip if short on time."],
     permitNote: FOREIGNER_GB,
+    photo: photos.shigar,
     sources: ["https://en.wikipedia.org/wiki/Shigar_Valley", "https://en.wikipedia.org/wiki/Shigar_Fort"],
   },
   {
@@ -277,6 +283,7 @@ export const destinations: Destination[] = [
     highlights: ["Lulusar Lake", "Babusar Top at 4,173 m", "Trout from the Kunhar River"],
     thingsToDo: ["Jeep to Saif-ul-Malook", "Drive to Babusar Top", "Walk along the Kunhar at dusk"],
     tips: ["Weekends in July are crowded; travel midweek if you can.", "Babusar Pass is only open in summer; check before you plan to cross."],
+    photo: photos.naran,
     sources: ["https://en.wikipedia.org/wiki/Kaghan_Valley", "https://en.wikipedia.org/wiki/Babusar_Pass"],
   },
   {
@@ -329,6 +336,7 @@ export const destinations: Destination[] = [
     highlights: ["Siri Paye meadows", "Views of Makra Peak", "Snow in winter"],
     thingsToDo: ["Jeep to Siri Paye", "Hike towards Makra Peak base", "Walk the pine forest trails"],
     tips: ["The road from Kiwai is steep; low gears help.", "In winter, check the road is open before you go."],
+    photo: photos.siriPaye,
     sources: ["https://en.wikipedia.org/wiki/Shogran"],
   },
   {
@@ -408,6 +416,7 @@ export const destinations: Destination[] = [
     thingsToDo: ["Stay in a guesthouse in Bumburet", "Visit the Kalash museum", "Watch polo in Chitral town in season"],
     tips: ["Ask before photographing people, especially women.", "Foreigners register with police in Chitral."],
     permitNote: "Foreign visitors register at the police and pay a Kalash valleys fee.",
+    photo: photos.kalash,
     sources: ["https://en.wikipedia.org/wiki/Kalash_Valleys", "https://en.wikipedia.org/wiki/Chitral"],
   },
   {

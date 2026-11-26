@@ -111,4 +111,3 @@ Destination photos are from Wikimedia Commons under free licences; each is credi
 
 - Mock data only; bookings are simulated and prices are estimates, not quotes.
 - Drive times assume good weather; landslides and snow can close roads at short notice.
-- Nine destinations still use a designed contour illustration instead of a photo.

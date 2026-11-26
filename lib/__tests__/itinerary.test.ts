@@ -25,6 +25,14 @@ describe("data", () => {
     expect(new Set(destinations.map((d) => d.slug)).size).toBe(destinations.length);
   });
 
+  it("gives every destination a credited photo", () => {
+    for (const d of destinations) {
+      expect(d.photo, d.slug).toBeDefined();
+      expect(d.photo!.author.length, d.slug).toBeGreaterThan(0);
+      expect(d.photo!.sourceUrl, d.slug).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
+    }
+  });
+
   it("keeps every summary within 160 characters", () => {
     for (const d of destinations) expect(d.summary.length).toBeLessThanOrEqual(160);
   });
