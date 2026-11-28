@@ -1,16 +1,16 @@
 # Shimal Trails — Northern Pakistan trip planner
 
 **CS4032 Web Programming · Assignment 3 · Fall 2026**
-**Group:** G__ · **Topic:** #17 Northern Pakistan trip planner
+**Group:** G03 · **Topic:** #17 Northern Pakistan trip planner
 
 | Member | Roll no. |
 | --- | --- |
 | Waleed Ahmadzai | 23I-2128 |
-| Ayesha | 23I-____ |
+| Ayesha | 24I-2077 |
 | Umar Aziz | 23I-2022 |
 
 - Repository: https://github.com/WaleedAhmadzai/shimal-trails/tree/assignment-3
-- Live site (Vercel): _to be added_
+- Live site (Vercel): https://shimal-trails.vercel.app/
 - Video demo: _to be added_
 
 ## About the app
@@ -34,7 +34,7 @@ Other scripts:
 npm run build      # production build
 npm run lint       # ESLint
 npm run typecheck  # TypeScript, no emit
-npm test           # 28 unit tests for the itinerary engine, search and form rules (Vitest)
+npm test           # 30 unit tests for the itinerary engine, search and form rules (Vitest)
 ```
 
 ## Routes
@@ -96,7 +96,7 @@ assets/photos/  destination photos (Wikimedia Commons)
 | Member | Pages | Components and logic |
 | --- | --- | --- |
 | Waleed Ahmadzai | _to be filled in_ | _to be filled in_ |
-| Ayesha | _to be filled in_ | _to be filled in_ |
+| Ayesha | Destinations listing (`/destinations`), destination detail (`/destinations/[slug]`), both `loading.tsx` files | DestinationCard, DestinationFilters, SearchBar, DestinationImage, FavouriteButton, SeasonBar, FactGrid, CardGridSkeleton; `data/destinations.ts`, `types/index.ts`, `lib/destinations.ts` (search, filter, sort)|
 | Umar Aziz | _to be filled in_ | _to be filled in_ |
 
 ## AI tools used
