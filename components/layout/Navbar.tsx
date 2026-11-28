@@ -55,7 +55,11 @@ export function Navbar({ links }: NavbarProps) {
     <header
       className={cn(
         "no-print fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color] duration-300",
-        overHero ? "bg-transparent" : "bg-snow/80 shadow-[0_1px_0_var(--color-line)] backdrop-blur-xl",
+         overHero
+          ? "bg-transparent"
+          : open
+            ? "bg-paper shadow-[0_1px_0_var(--color-line)]"
+            : "bg-snow/80 shadow-[0_1px_0_var(--color-line)] backdrop-blur-xl",
       )}
     >
       <a
