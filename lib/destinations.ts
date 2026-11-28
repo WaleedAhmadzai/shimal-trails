@@ -7,7 +7,7 @@ import { hoursFromIslamabad } from "./itinerary/roads";
 // The only way pages read destination data. In Track B these functions
 // query a database instead, and no page has to change.
 
-export type SortKey = "recommended" | "name" | "drive" | "altitude" | "budget";
+export type SortKey = "recommended" | "name" | "drive" | "altitude" | "lowest" | "budget";
 
 export interface DestinationFilters {
   q: string;
@@ -24,6 +24,7 @@ export const SORT_OPTIONS: { value: SortKey; label: string }[] = [
   { value: "name", label: "Name A–Z" },
   { value: "drive", label: "Closest to Islamabad" },
   { value: "altitude", label: "Highest first" },
+  { value: "lowest", label: "Lowest altitude first" },
   { value: "budget", label: "Lowest budget" },
 ];
 
@@ -105,6 +106,8 @@ export function sortDestinations(list: Destination[], sort: SortKey) {
       return copy.sort((a, b) => hoursFromIslamabad(a.nodeId) - hoursFromIslamabad(b.nodeId));
     case "altitude":
       return copy.sort((a, b) => b.altitudeM - a.altitudeM);
+    case "lowest":
+      return copy.sort((a, b) => a.altitudeM - b.altitudeM);
     case "budget":
       return copy.sort((a, b) => a.costPerNightPkr.standard - b.costPerNightPkr.standard);
     default:
