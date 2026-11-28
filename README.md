@@ -1,7 +1,7 @@
 # Shimal Trails — Northern Pakistan trip planner
 
 **CS4032 Web Programming · Assignment 3 · Fall 2026**
-**Group:** G__ · **Topic:** #17 Northern Pakistan trip planner
+**Group:** G 03 · **Topic:** #17 Northern Pakistan trip planner
 
 | Member | Roll no. |
 | --- | --- |
@@ -96,8 +96,11 @@ assets/photos/  destination photos (Wikimedia Commons)
 | Member | Pages | Components and logic |
 | --- | --- | --- |
 | Waleed Ahmadzai | _to be filled in_ | _to be filled in_ |
-| Ayesha |  Destinations listing (`/destinations`), destination detail (`/destinations/[slug]`), both `loading.tsx` files  |DestinationCard, DestinationFilters, SearchBar, DestinationImage, FavouriteButton, SeasonBar, FactGrid, CardGridSkeleton; `data/destinations.ts`, `types/index.ts`, `lib/destinations.ts` (search, filter, sort) |
+| Ayesha | Destinations listing (`/destinations`), destination detail (`/destinations/[slug]`), both `loading.tsx` files | DestinationCard, DestinationFilters, SearchBar, DestinationImage, FavouriteButton, SeasonBar, FactGrid, CardGridSkeleton; `data/destinations.ts`, `types/index.ts`, `lib/destinations.ts` (search, filter, sort); "Lowest altitude first" sort and its unit test; mobile menu fix in `Navbar.tsx` |
 | Umar Aziz | _to be filled in_ | _to be filled in_ |
+
+
+**Ayesha (member B, discovery):** Owns the destinations side of the app: the listing page with search, filters and sort, the dynamic detail page with `notFound()` for unknown destinations and `generateMetadata` for per-page titles, the two `loading.tsx` files, the `Destination` type and the 18 destination records. Added the "Lowest altitude first" sort option with a unit test that checks the order, and fixed a mobile bug where the navbar's blur effect collapsed the menu's background to zero height, so the links showed over the page text on phones. Presents the discovery demo and code walkthrough in the video.
 
 ## AI tools used
 
