@@ -9,8 +9,8 @@
 | Ayesha | 24I-2077 |
 | Umar Aziz | 23I-2022 |
 
-- Repository: https://github.com/WaleedAhmadzai/shimal-trails/tree/assignment-3
-- Live site (Vercel): _to be added_
+- Repository: https://github.com/WaleedAhmadzai/shimal-trails
+- Live site (Vercel): (https://shimal-trails.vercel.app)
 - Video demo: _to be added_
 
 ## About the app
