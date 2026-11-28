@@ -10,8 +10,8 @@ export interface EmptyStateProps {
 
 export function EmptyState({ title, description, icon: Icon = Compass, children }: EmptyStateProps) {
   return (
-    <div className="flex flex-col items-center rounded-[1.4rem] border border-dashed border-line-strong bg-snow/60 px-6 py-14 text-center">
-      <span className="grid size-14 place-items-center rounded-full bg-paper-2 text-glacier">
+    <div className="flex flex-col items-center rounded-3xl border border-dashed border-line-strong bg-snow/60 px-6 py-14 text-center">
+      <span className="grid size-14 place-items-center rounded-full bg-pine-soft text-pine">
         <Icon className="size-6" aria-hidden />
       </span>
       <h2 className="mt-5 text-3xl">{title}</h2>

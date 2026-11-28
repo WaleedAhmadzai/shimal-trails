@@ -25,8 +25,8 @@ export function SeasonBar({ bestMonths, openMonths, highlight, size = "lg" }: Se
                 className={cn(
                   "w-full rounded-full",
                   size === "lg" ? "h-2.5" : "h-1.5",
-                  state === "best" && "bg-glacier",
-                  state === "open" && "bg-glacier/30",
+                  state === "best" && "bg-pine",
+                  state === "open" && "bg-pine/30",
                   state === "closed" && "bg-[repeating-linear-gradient(135deg,var(--color-line-strong)_0_2px,transparent_2px_5px)]",
                   highlight === m && "ring-2 ring-apricot-bright ring-offset-2 ring-offset-paper",
                 )}
@@ -44,8 +44,8 @@ export function SeasonBar({ bestMonths, openMonths, highlight, size = "lg" }: Se
       </ol>
       {size === "lg" && (
         <div className="mt-4 flex flex-wrap gap-4 text-xs text-muted">
-          <span className="inline-flex items-center gap-2"><span className="h-2 w-5 rounded-full bg-glacier" />Best time</span>
-          <span className="inline-flex items-center gap-2"><span className="h-2 w-5 rounded-full bg-glacier/30" />Possible</span>
+          <span className="inline-flex items-center gap-2"><span className="h-2 w-5 rounded-full bg-pine" />Best time</span>
+          <span className="inline-flex items-center gap-2"><span className="h-2 w-5 rounded-full bg-pine/30" />Possible</span>
           <span className="inline-flex items-center gap-2"><span className="h-2 w-5 rounded-full bg-[repeating-linear-gradient(135deg,var(--color-line-strong)_0_2px,transparent_2px_5px)]" />Closed or snowbound</span>
         </div>
       )}

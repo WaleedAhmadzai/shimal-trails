@@ -24,7 +24,7 @@ export function TripSummary({ itinerary, plan, cost, variant = "full", children,
   ];
 
   return (
-    <div className={cn("rounded-[1.4rem] bg-ink p-6 text-snow shadow-lift", className)}>
+    <div className={cn("rounded-3xl bg-gradient-to-br from-pine-deep to-ink p-6 text-snow shadow-lift", className)}>
       <p className="eyebrow text-snow/55">Your trip</p>
       <p className="mt-2 font-display text-2xl leading-tight">
         {plan.stops.length > 0 ? plan.stops.map((s) => s.destination.name).join(" · ") : "No stops yet"}

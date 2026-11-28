@@ -25,7 +25,7 @@ export function SelectField({ label, options, hideLabel, invalid, className, id,
         <select
           id={selectId}
           className={cn(
-            "h-11 w-full cursor-pointer appearance-none rounded-full border bg-snow pl-4 pr-10 text-sm text-ink outline-none transition focus:border-ink",
+            "h-11 w-full cursor-pointer appearance-none rounded-full border bg-snow pl-4 pr-10 text-sm text-ink outline-none transition hover:border-pine/60 focus:border-pine focus:ring-4 focus:ring-pine/10",
             invalid ? "border-danger" : "border-line-strong",
           )}
           aria-invalid={invalid || undefined}

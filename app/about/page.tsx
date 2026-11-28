@@ -31,10 +31,10 @@ export default function AboutPage() {
     <>
       <section className="relative isolate overflow-hidden bg-ink pt-32 pb-20 text-snow sm:pb-28">
         <Image src={photos.margalla.src} alt={photos.margalla.alt} fill placeholder="blur" sizes="100vw" className="-z-20 object-cover opacity-50" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/70 to-ink/40" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-pine-deep via-ink/65 to-ink/30" />
         <div className="container-page">
           <p className="eyebrow mb-4 flex items-center gap-2 text-snow/70">
-            <span aria-hidden className="h-px w-6 bg-apricot-bright" />
+            <span aria-hidden className="h-0.5 w-6 rounded-full bg-pine-bright" />
             About Shimal Trails
           </p>
           <h1 className="max-w-4xl text-5xl leading-[0.98] sm:text-7xl">
@@ -50,11 +50,11 @@ export default function AboutPage() {
 
       <section className="container-page py-20 sm:py-24">
         <SectionHeading eyebrow="What we believe" title="Three promises" />
-        <ul className="mt-12 grid gap-px overflow-hidden rounded-[1.4rem] border border-line bg-line md:grid-cols-3">
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-line bg-line md:grid-cols-3">
           {PRINCIPLES.map((p, i) => (
             <li key={p.title} className="bg-snow p-7">
               <div className="flex items-center justify-between">
-                <p.icon className="size-6 text-apricot" aria-hidden />
+                <span className="grid size-11 place-items-center rounded-full bg-apricot-soft text-apricot"><p.icon className="size-5" aria-hidden /></span>
                 <span className="font-mono text-xs text-muted">0{i + 1}</span>
               </div>
               <h3 className="mt-8 text-3xl">{p.title}</h3>
@@ -70,7 +70,7 @@ export default function AboutPage() {
           <ul className="space-y-6">
             {SAFETY.map((s) => (
               <li key={s.title} className="flex gap-5 border-b border-line pb-6 last:border-0">
-                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-glacier-soft text-glacier">
+                <span className="grid size-12 shrink-0 place-items-center rounded-full bg-pine-soft text-pine">
                   <s.icon className="size-5" aria-hidden />
                 </span>
                 <div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
       </section>
 
       <section className="container-page pb-24">
-        <div className="rounded-[1.4rem] bg-paper-2 p-8 sm:p-10">
+        <div className="rounded-3xl bg-pine-soft p-8 sm:p-10">
           <h2 className="text-3xl">Credits and honesty</h2>
           <p className="mt-3 max-w-3xl leading-relaxed text-muted">
             Photos are from Wikimedia Commons contributors under free licences and are credited on each destination page.
@@ -105,7 +105,7 @@ export default function AboutPage() {
             are planning estimates from November 2026. Bookings on this site are simulated: nothing is sent or charged.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/destinations">Explore destinations</Button>
+            <Button href="/destinations" variant="pine">Explore destinations</Button>
             <Button href="/itinerary" variant="outline">Open the builder</Button>
           </div>
         </div>

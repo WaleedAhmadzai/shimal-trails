@@ -84,7 +84,7 @@ export function ItineraryBuilder() {
       )}
 
       {/* Trip settings */}
-      <section aria-label="Trip settings" className="grid gap-4 rounded-[1.4rem] border border-line bg-snow p-5 sm:grid-cols-2 lg:grid-cols-4">
+      <section aria-label="Trip settings" className="grid gap-4 rounded-3xl border border-line bg-snow p-5 sm:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="start-date" className="text-xs font-medium text-ink-2">Start date</label>
           <input
@@ -183,7 +183,7 @@ export function ItineraryBuilder() {
               />
             )}
 
-            <section aria-labelledby="altitude-heading" className="rounded-[1.4rem] border border-line bg-snow p-5">
+            <section aria-labelledby="altitude-heading" className="rounded-3xl border border-line bg-snow p-5">
               <h2 id="altitude-heading" className="font-sans text-base font-medium">Where you sleep, night by night</h2>
               <p className="text-sm text-muted">Above the dashed line, add rest nights to acclimatise.</p>
               <ElevationProfile className="mt-4" days={plan.days} startAltitudeM={getNode(itinerary.startCity)?.altitudeM ?? 540} />
@@ -218,7 +218,7 @@ export function ItineraryBuilder() {
                 </button>
               </div>
             </TripSummary>
-            <section aria-label="Checks" className="rounded-[1.4rem] border border-line bg-snow p-5">
+            <section aria-label="Checks" className="rounded-3xl border border-line bg-snow p-5">
               <h2 className="mb-3 font-sans text-base font-medium">Checks for {MONTHS_LONG[month - 1]}</h2>
               <WarningList warnings={warnings} />
             </section>
@@ -240,7 +240,7 @@ export function ItineraryBuilder() {
 
 function EmptyBuilder({ onTemplate }: { onTemplate: (id: string) => void }) {
   return (
-    <div className="rounded-[1.4rem] border border-dashed border-line-strong bg-snow/60 p-6 sm:p-10">
+    <div className="rounded-3xl border border-dashed border-line-strong bg-snow/60 p-6 sm:p-10">
       <h2 className="text-4xl">Start with a ready-made plan</h2>
       <p className="mt-2 max-w-lg text-muted">Or browse destinations and add the places you like.</p>
       <ul className="mt-8 grid gap-4 md:grid-cols-3">
@@ -271,14 +271,14 @@ function EmptyBuilder({ onTemplate }: { onTemplate: (id: string) => void }) {
 export function BuilderSkeleton() {
   return (
     <div className="space-y-8" role="status" aria-label="Loading your itinerary">
-      <div className="h-24 animate-pulse rounded-[1.4rem] bg-paper-2" />
+      <div className="h-24 animate-pulse rounded-3xl bg-paper-2" />
       <div className="grid gap-8 lg:grid-cols-[1fr_24rem]">
         <div className="space-y-3">
           {[0, 1, 2].map((i) => (
             <div key={i} className={cn("h-24 animate-pulse rounded-2xl bg-paper-2")} />
           ))}
         </div>
-        <div className="h-96 animate-pulse rounded-[1.4rem] bg-paper-2" />
+        <div className="h-96 animate-pulse rounded-3xl bg-paper-2" />
       </div>
     </div>
   );

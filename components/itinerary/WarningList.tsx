@@ -15,7 +15,7 @@ const STYLES = {
 export function WarningList({ warnings }: WarningListProps) {
   if (warnings.length === 0) {
     return (
-      <p className="flex items-center gap-2 rounded-xl bg-[#e1f0e6] px-3.5 py-3 text-sm text-success">
+      <p className="flex items-center gap-2 rounded-xl bg-pine-soft px-3.5 py-3 text-sm text-pine">
         <CheckCircle2 className="size-4 shrink-0" aria-hidden />
         All checks passed: roads open, altitude gain is safe.
       </p>

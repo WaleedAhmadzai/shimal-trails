@@ -29,7 +29,7 @@ export function ConfirmationDialog({ open, reference, name, contactBy, summary, 
       ref={ref}
       onClose={onClose}
       aria-labelledby="confirm-title"
-      className="m-auto w-[min(92vw,32rem)] rounded-[1.6rem] bg-snow p-0 text-ink shadow-lift backdrop:bg-ink/60 backdrop:backdrop-blur-sm open:animate-rise"
+      className="m-auto w-[min(92vw,32rem)] rounded-3xl bg-snow p-0 text-ink shadow-lift backdrop:bg-ink/60 backdrop:backdrop-blur-sm open:animate-rise"
     >
       <div className="relative p-7 sm:p-9">
         <button
@@ -40,7 +40,7 @@ export function ConfirmationDialog({ open, reference, name, contactBy, summary, 
         >
           <X className="size-5" aria-hidden />
         </button>
-        <span className="grid size-14 place-items-center rounded-full bg-[#e1f0e6] text-success">
+        <span className="grid size-14 place-items-center rounded-full bg-pine-soft text-pine">
           <CheckCircle2 className="size-7" aria-hidden />
         </span>
         <h2 id="confirm-title" className="mt-6 text-4xl leading-tight">
@@ -61,7 +61,7 @@ export function ConfirmationDialog({ open, reference, name, contactBy, summary, 
         </dl>
         <p className="mt-4 text-xs text-muted">This is a demo: nothing was sent and no details were stored.</p>
         <div className="mt-7 flex flex-col gap-2 sm:flex-row">
-          <Button onClick={onClose} className="flex-1">Done</Button>
+          <Button variant="pine" onClick={onClose} className="flex-1">Done</Button>
           <Button href="/destinations" variant="outline" className="flex-1" onClick={onClose}>
             Keep exploring
           </Button>

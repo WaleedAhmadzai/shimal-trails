@@ -19,7 +19,7 @@ export function ItineraryCount({ tone = "dark", className }: ItineraryCountProps
       href="/itinerary"
       className={cn(
         "relative inline-flex h-10 items-center gap-2 rounded-full pl-3 pr-4 text-sm font-medium transition",
-        tone === "light" ? "bg-snow/15 text-snow ring-1 ring-snow/25 hover:bg-snow/25" : "bg-ink text-snow hover:bg-ink-2",
+        tone === "light" ? "bg-snow/15 text-snow ring-1 ring-snow/25 hover:bg-snow/25" : "bg-pine text-snow hover:bg-pine-deep",
         className,
       )}
       aria-label={`My trip, ${hydrated ? label : "loading"}`}

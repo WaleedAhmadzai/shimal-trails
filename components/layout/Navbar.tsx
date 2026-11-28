@@ -55,7 +55,7 @@ export function Navbar({ links }: NavbarProps) {
     <header
       className={cn(
         "no-print fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color] duration-300",
-        overHero ? "bg-transparent" : "bg-paper/85 shadow-[0_1px_0_var(--color-line)] backdrop-blur-xl",
+        overHero ? "bg-transparent" : "bg-snow/80 shadow-[0_1px_0_var(--color-line)] backdrop-blur-xl",
       )}
     >
       <a
@@ -75,9 +75,9 @@ export function Navbar({ links }: NavbarProps) {
                 aria-current={isActive(link.href) ? "page" : undefined}
                 className={cn(
                   "relative rounded-full px-4 py-2 text-sm font-medium transition",
-                  overHero ? "text-snow/85 hover:text-snow" : "text-ink-2 hover:text-ink",
+                  overHero ? "text-snow/85 hover:text-snow" : "text-ink-2 hover:text-pine",
                   isActive(link.href) &&
-                    "after:absolute after:inset-x-4 after:-bottom-0.5 after:h-px after:bg-apricot-bright",
+                    "after:absolute after:inset-x-4 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-apricot-bright",
                 )}
               >
                 {link.label}
@@ -93,7 +93,7 @@ export function Navbar({ links }: NavbarProps) {
             onClick={() => setOpen((v) => !v)}
             className={cn(
               "grid size-11 place-items-center rounded-full transition md:hidden",
-              overHero ? "text-snow hover:bg-snow/15" : "text-ink hover:bg-ink/5",
+              overHero ? "text-snow hover:bg-snow/15" : "text-ink hover:bg-pine-soft",
             )}
             aria-expanded={open}
             aria-controls="mobile-menu"

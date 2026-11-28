@@ -13,8 +13,8 @@ export default function ItineraryPage() {
   return (
     <div className="container-page pt-28 pb-32 lg:pb-24">
       <header className="mb-10 max-w-3xl">
-        <p className="eyebrow mb-4 flex items-center gap-2 text-muted">
-          <span aria-hidden className="h-px w-6 bg-apricot-bright" />
+        <p className="eyebrow mb-4 flex items-center gap-2 text-pine">
+          <span aria-hidden className="h-0.5 w-6 rounded-full bg-pine" />
           Itinerary builder
         </p>
         <h1 className="text-5xl leading-[0.98] sm:text-7xl">

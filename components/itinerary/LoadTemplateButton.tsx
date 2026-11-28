@@ -13,7 +13,7 @@ export interface LoadTemplateButtonProps {
 }
 
 /** Client Component: loads a ready-made plan into the store on click. */
-export function LoadTemplateButton({ templateId, templateName, variant = "primary" }: LoadTemplateButtonProps) {
+export function LoadTemplateButton({ templateId, templateName, variant = "pine" }: LoadTemplateButtonProps) {
   const { loadTemplate } = useItinerary();
   const { notify } = useToast();
   const router = useRouter();

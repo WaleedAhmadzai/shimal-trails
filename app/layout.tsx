@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0e1a17",
+  themeColor: "#123f2a",
 };
 
 const NAV_LINKS = [

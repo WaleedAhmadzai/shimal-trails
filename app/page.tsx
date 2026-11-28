@@ -60,16 +60,16 @@ export default function HomePage() {
           sizes="100vw"
           className="-z-20 scale-105 object-cover object-[center_35%]"
         />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/70 via-ink/25 to-ink/95" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ink/70 via-ink/20 to-pine-deep/95" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/60 to-transparent" />
 
         <div className="container-page flex flex-1 flex-col justify-end pb-10 pt-32 sm:pb-14">
           <p className="eyebrow mb-6 flex animate-rise items-center gap-3 text-snow/75">
-            <span className="h-px w-8 bg-apricot-bright" />
+            <span className="h-0.5 w-8 rounded-full bg-apricot-bright" />
             Northern Pakistan trip planner
           </p>
           <h1 className="max-w-4xl animate-rise text-[3.4rem] leading-[0.92] [animation-delay:80ms] sm:text-7xl lg:text-[7.5rem]">
-            The North, <em className="text-apricot-soft">planned</em> properly.
+            The North, <em className="text-apricot-bright">planned</em> properly.
           </h1>
           <p className="mt-6 max-w-xl animate-rise text-base leading-relaxed text-snow/80 [animation-delay:160ms] sm:text-lg">
             Real drive times on real roads, pass closures by month, altitude checks and a live budget in PKR. From
@@ -79,7 +79,7 @@ export default function HomePage() {
           <form
             action="/destinations"
             method="get"
-            className="mt-9 flex max-w-2xl animate-rise flex-col gap-2 rounded-[1.6rem] bg-snow/10 p-2 ring-1 ring-snow/20 backdrop-blur-xl [animation-delay:240ms] sm:flex-row sm:rounded-full"
+            className="mt-9 flex max-w-2xl animate-rise flex-col gap-2 rounded-3xl bg-snow/10 p-2 ring-1 ring-snow/20 backdrop-blur-xl [animation-delay:240ms] sm:flex-row sm:rounded-full"
           >
             <label htmlFor="hero-q" className="sr-only">Where do you want to go?</label>
             <input
@@ -100,7 +100,7 @@ export default function HomePage() {
                 <option key={m} value={i + 1}>{m}</option>
               ))}
             </select>
-            <button type="submit" className="h-12 rounded-full bg-apricot px-7 font-medium text-snow transition hover:bg-[#b4461a]">
+            <button type="submit" className="h-12 rounded-full bg-apricot px-7 font-medium text-snow transition hover:bg-apricot-bright">
               Explore
             </button>
           </form>
@@ -154,16 +154,16 @@ export default function HomePage() {
             title="Every season has its north"
             description="Roads and passes open and close with the snow. Pick a season and we show only what is good then."
           />
-          <div className="grid gap-px overflow-hidden rounded-[1.4rem] border border-line bg-line sm:grid-cols-2">
+          <div className="grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2">
             {SEASONS.map((season) => (
               <Link
                 key={season.name}
                 href={`/destinations?month=${season.month}`}
-                className="group flex flex-col justify-between gap-8 bg-snow p-6 transition hover:bg-paper"
+                className="group flex flex-col justify-between gap-8 bg-snow p-6 transition hover:bg-pine-soft/60"
               >
                 <div className="flex items-center justify-between">
                   <span className="eyebrow text-muted">{season.months}</span>
-                  <CalendarRange className="size-4 text-glacier transition group-hover:text-apricot" aria-hidden />
+                  <CalendarRange className="size-4 text-pine transition group-hover:text-apricot" aria-hidden />
                 </div>
                 <div>
                   <h3 className="text-4xl">{season.name}</h3>
@@ -180,7 +180,7 @@ export default function HomePage() {
       </section>
 
       {/* Engine showcase */}
-      <section className="relative overflow-hidden bg-ink text-snow">
+      <section className="relative overflow-hidden bg-gradient-to-br from-pine-deep via-ink to-ink text-snow">
         <Topography seed={4} className="text-snow/[0.07]" />
         <div className="container-page relative grid gap-14 py-20 sm:py-28 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
@@ -198,7 +198,7 @@ export default function HomePage() {
                 { icon: Wallet, title: "Honest PKR budget", text: "Rooms, vehicle and food by comfort level, per person and for the group." },
               ].map((item) => (
                 <li key={item.title} className="border-t border-snow/15 pt-4">
-                  <item.icon className="size-5 text-apricot-bright" aria-hidden />
+                  <item.icon className="size-5 text-pine-bright" aria-hidden />
                   <h3 className="mt-3 font-sans text-base font-medium">{item.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-snow/65">{item.text}</p>
                 </li>
@@ -206,7 +206,7 @@ export default function HomePage() {
             </ul>
           </div>
 
-          <div className="rounded-[1.6rem] bg-snow/[0.04] p-6 ring-1 ring-snow/15 backdrop-blur sm:p-8">
+          <div className="rounded-3xl bg-snow/[0.04] p-6 ring-1 ring-snow/15 backdrop-blur sm:p-8">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
                 <p className="eyebrow text-snow/55">Sample plan · October</p>
@@ -250,11 +250,11 @@ export default function HomePage() {
             });
             const stops = getDestinationsBySlugs(template.stops.map((s) => s.slug));
             return (
-              <article key={template.id} className="relative flex flex-col overflow-hidden rounded-[1.4rem] border border-line bg-snow p-7 shadow-soft">
-                <Topography seed={i + 10} className="text-ink/[0.05]" />
+              <article key={template.id} className="relative flex flex-col overflow-hidden rounded-3xl border border-line bg-snow p-7 shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift">
+                <span aria-hidden className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-pine via-pine-bright to-apricot-bright" />
                 <div className="relative flex items-center justify-between">
                   <span className="font-mono text-xs tracking-[0.2em] text-muted">0{i + 1}</span>
-                  <span className="rounded-full bg-paper-2 px-3 py-1 font-mono text-xs">{templatePlan.days.length} days</span>
+                  <span className="rounded-full bg-pine-soft px-3 py-1 font-mono text-xs text-pine">{templatePlan.days.length} days</span>
                 </div>
                 <h3 className="relative mt-8 text-4xl">{template.name}</h3>
                 <p className="relative mt-2 text-sm leading-relaxed text-muted">{template.tagline}</p>
@@ -296,17 +296,17 @@ export default function HomePage() {
       </section>
 
       {/* Trust + CTA */}
-      <section className="border-t border-line bg-paper-2">
+      <section className="border-t border-line bg-pine-soft/60">
         <div className="container-page grid gap-10 py-20 lg:grid-cols-[1.3fr_1fr] lg:items-center">
           <div>
             <p className="eyebrow mb-4 flex items-center gap-2 text-muted">
-              <ShieldCheck className="size-4 text-glacier" aria-hidden />
+              <ShieldCheck className="size-4 text-pine" aria-hidden />
               Plan it, then hand it over
             </p>
             <h2 className="text-5xl leading-[1.02] sm:text-6xl">Send your plan to a local operator for a real quote.</h2>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
-            <Button href="/itinerary" size="lg">Build my itinerary</Button>
+            <Button href="/itinerary" size="lg" variant="pine">Build my itinerary</Button>
             <Button href="/plan-trip" size="lg" variant="outline">Request a quote</Button>
           </div>
         </div>

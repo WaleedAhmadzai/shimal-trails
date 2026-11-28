@@ -29,12 +29,12 @@ export function DestinationCard({ destination, variant = "default", index, prior
     <article className="group relative">
       <Link
         href={`/destinations/${destination.slug}`}
-        className="block rounded-[1.4rem] focus-visible:outline-offset-4"
+        className="block rounded-3xl focus-visible:outline-offset-4"
         aria-label={`${destination.name}, ${region?.name}`}
       >
         <div
           className={cn(
-            "relative overflow-hidden rounded-[1.4rem] bg-ink shadow-soft transition duration-500 ease-out group-hover:shadow-lift",
+            "relative overflow-hidden rounded-3xl bg-ink shadow-soft transition duration-500 ease-out group-hover:shadow-lift",
             compact ? "aspect-[4/3]" : "aspect-[4/5]",
           )}
         >
@@ -45,7 +45,7 @@ export function DestinationCard({ destination, variant = "default", index, prior
               sizes={compact ? "(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw" : "(min-width: 1280px) 30vw, (min-width: 640px) 45vw, 92vw"}
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-pine-deep/90 via-ink/15 to-transparent" />
 
           <div className="absolute left-4 top-4 flex items-center gap-2">
             {typeof index === "number" && (
@@ -72,7 +72,7 @@ export function DestinationCard({ destination, variant = "default", index, prior
             </div>
           </div>
 
-          <span className="absolute bottom-5 right-5 grid size-10 translate-y-2 place-items-center rounded-full bg-snow text-ink opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+          <span className="absolute bottom-5 right-5 grid size-10 translate-y-2 place-items-center rounded-full bg-apricot text-snow opacity-0 transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
             <ArrowUpRight className="size-5" aria-hidden />
           </span>
         </div>

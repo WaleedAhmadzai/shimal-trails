@@ -11,14 +11,14 @@ export interface RegionTileProps {
   className?: string;
 }
 
-const TONES = ["bg-ink text-snow", "bg-glacier text-snow", "bg-apricot-soft text-ink", "bg-paper-2 text-ink"];
+const TONES = ["bg-pine-deep text-snow", "bg-glacier text-snow", "bg-apricot-soft text-ink", "bg-pine text-snow"];
 
 export function RegionTile({ region, count, index, className }: RegionTileProps) {
   return (
     <Link
       href={`/destinations?region=${region.id}`}
       className={cn(
-        "group relative flex min-h-56 flex-col justify-between overflow-hidden rounded-[1.4rem] p-6 transition duration-500 hover:-translate-y-1 hover:shadow-lift",
+        "group relative flex min-h-56 flex-col justify-between overflow-hidden rounded-3xl p-6 transition duration-500 hover:-translate-y-1 hover:shadow-lift",
         TONES[index % TONES.length],
         className,
       )}

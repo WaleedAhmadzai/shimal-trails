@@ -32,8 +32,8 @@ export function SectionHeading({
     >
       <div className={cn("max-w-2xl", align === "center" && "mx-auto")}>
         {eyebrow && (
-          <p className={cn("eyebrow mb-4 flex items-center gap-2", light ? "text-snow/70" : "text-muted", align === "center" && "justify-center")}>
-            <span aria-hidden className="h-px w-6 bg-apricot-bright" />
+          <p className={cn("eyebrow mb-4 flex items-center gap-2", light ? "text-snow/75" : "text-pine", align === "center" && "justify-center")}>
+            <span aria-hidden className={cn("h-0.5 w-6 rounded-full", light ? "bg-pine-bright" : "bg-pine")} />
             {eyebrow}
           </p>
         )}

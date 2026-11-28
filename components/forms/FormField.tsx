@@ -12,7 +12,7 @@ export interface FormFieldProps {
 }
 
 export const inputClass =
-  "h-12 w-full rounded-xl border bg-snow px-4 text-base text-ink outline-none transition placeholder:text-muted/70 focus:border-ink focus:ring-4 focus:ring-ink/5";
+  "h-12 w-full rounded-xl border bg-snow px-4 text-base text-ink outline-none transition placeholder:text-muted/70 hover:border-pine/60 focus:border-pine focus:ring-4 focus:ring-pine/10";
 
 /** Label, input, hint and error message wired together for screen readers. */
 export function FormField({ id, label, error, hint, required, className, children }: FormFieldProps) {

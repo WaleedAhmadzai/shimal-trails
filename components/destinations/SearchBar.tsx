@@ -26,7 +26,7 @@ export function SearchBar({ value, onChange, placeholder = "Search", label = "Se
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         autoComplete="off"
-        className="h-13 w-full rounded-full border border-line-strong bg-snow pl-12 pr-12 text-base text-ink shadow-soft outline-none transition placeholder:text-muted focus:border-ink [&::-webkit-search-cancel-button]:hidden"
+        className="h-13 w-full rounded-full border border-line-strong bg-snow pl-12 pr-12 text-base text-ink shadow-sm outline-none transition placeholder:text-muted hover:border-pine/60 focus:border-pine focus:ring-4 focus:ring-pine/10 [&::-webkit-search-cancel-button]:hidden"
       />
       {value && (
         <button

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "accent" | "outline" | "ghost" | "light";
+type Variant = "primary" | "accent" | "pine" | "outline" | "ghost" | "light";
 type Size = "sm" | "md" | "lg";
 
 interface BaseProps {
@@ -18,10 +18,11 @@ export type ButtonProps = BaseProps &
   );
 
 const variants: Record<Variant, string> = {
-  primary: "bg-ink text-snow hover:bg-ink-2 shadow-soft",
-  accent: "bg-apricot text-snow hover:bg-[#b4461a] shadow-soft",
-  outline: "border border-line-strong bg-transparent text-ink hover:border-ink hover:bg-snow",
-  ghost: "bg-transparent text-ink hover:bg-ink/5",
+  primary: "bg-ink text-snow hover:bg-pine-deep shadow-soft",
+  accent: "bg-apricot text-snow hover:bg-apricot-deep shadow-soft",
+  pine: "bg-pine text-snow hover:bg-pine-deep shadow-soft",
+  outline: "border border-line-strong bg-transparent text-ink hover:border-pine hover:bg-pine-soft hover:text-pine-deep",
+  ghost: "bg-transparent text-ink hover:bg-pine-soft",
   light: "bg-snow/95 text-ink hover:bg-snow shadow-soft backdrop-blur",
 };
 

@@ -116,7 +116,7 @@ export function DestinationFilters({ filters, resultCount }: DestinationFiltersP
         <button
           type="button"
           onClick={() => setPanelOpen((v) => !v)}
-          className="relative grid size-13 shrink-0 place-items-center rounded-full border border-line-strong bg-snow text-ink shadow-soft lg:hidden"
+          className="relative grid size-13 shrink-0 place-items-center rounded-full border border-line-strong bg-snow text-ink shadow-sm transition hover:border-pine lg:hidden"
           aria-expanded={panelOpen}
           aria-controls="filter-panel"
           aria-label="Show filters"
@@ -138,12 +138,12 @@ export function DestinationFilters({ filters, resultCount }: DestinationFiltersP
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <label className="mr-1 inline-flex cursor-pointer items-center gap-2 rounded-full border border-line-strong bg-snow px-3.5 py-2 text-sm has-[:checked]:border-glacier has-[:checked]:bg-glacier-soft has-[:checked]:text-glacier">
+        <label className="mr-1 inline-flex cursor-pointer items-center gap-2 rounded-full border border-line-strong bg-snow px-3.5 py-2 text-sm has-[:checked]:border-pine has-[:checked]:bg-pine-soft has-[:checked]:text-pine-deep">
           <input
             type="checkbox"
             checked={filters.family}
             onChange={(e) => update("family", e.target.checked)}
-            className="size-4 accent-glacier"
+            className="size-4 accent-pine"
           />
           Family-friendly only
         </label>
@@ -152,7 +152,7 @@ export function DestinationFilters({ filters, resultCount }: DestinationFiltersP
             key={key}
             type="button"
             onClick={() => update(key, EMPTY_FILTERS[key])}
-            className="inline-flex items-center gap-1.5 rounded-full bg-ink px-3.5 py-2 text-sm text-snow transition hover:bg-ink-2"
+            className="inline-flex items-center gap-1.5 rounded-full bg-pine px-3.5 py-2 text-sm text-snow transition hover:bg-pine-deep"
             aria-label={`Remove filter ${CHIP_LABELS[key](filters)}`}
           >
             {CHIP_LABELS[key](filters)}

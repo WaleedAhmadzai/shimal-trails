@@ -18,7 +18,7 @@ export function FactGrid({ facts, columns = 3 }: FactGridProps) {
   return (
     <dl
       className={cn(
-        "grid grid-cols-2 overflow-hidden rounded-2xl border border-line bg-line [&>div]:bg-snow",
+        "grid grid-cols-2 overflow-hidden rounded-3xl border border-line bg-line [&>div]:bg-snow",
         "gap-px",
         columns === 3 ? "md:grid-cols-3" : "md:grid-cols-2",
       )}
@@ -26,7 +26,7 @@ export function FactGrid({ facts, columns = 3 }: FactGridProps) {
       {facts.map((fact) => (
         <div key={fact.label} className="flex flex-col gap-2 p-5">
           <dt className="eyebrow flex items-center gap-2 text-muted">
-            <fact.icon className="size-3.5 text-glacier" aria-hidden />
+            <fact.icon className="size-3.5 text-pine" aria-hidden />
             {fact.label}
           </dt>
           <dd className="font-display text-2xl leading-tight text-ink sm:text-[1.7rem]">{fact.value}</dd>

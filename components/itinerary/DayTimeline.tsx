@@ -30,7 +30,7 @@ export function DayTimeline({ days, flaggedDays = [], compact = false, tone = "l
                 "relative z-10 grid size-[2.3rem] shrink-0 place-items-center rounded-full ring-4",
                 dark ? "ring-ink" : "ring-paper",
                 day.kind === "explore"
-                  ? "bg-glacier text-snow"
+                  ? "bg-pine text-snow"
                   : flagged
                     ? "bg-warning text-snow"
                     : dark

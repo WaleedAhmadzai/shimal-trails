@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   const popular = getDestinationsBySlugs(["hunza-valley", "skardu", "fairy-meadows", "naran-kaghan"]);
   return (
-    <section className="relative flex min-h-[85svh] items-center overflow-hidden bg-ink pt-24 text-snow">
+    <section className="relative flex min-h-[85svh] items-center overflow-hidden bg-pine-deep pt-24 text-snow">
       <Topography seed={9} className="text-snow/[0.08]" />
       <div className="container-page relative py-16">
         <p className="font-mono text-sm tracking-[0.3em] text-apricot-bright">ERROR 404 · ALTITUDE UNKNOWN</p>
@@ -31,7 +31,7 @@ export default function NotFound() {
         <ul className="mt-4 flex flex-wrap gap-2">
           {popular.map((d) => (
             <li key={d.slug}>
-              <Link href={`/destinations/${d.slug}`} className="inline-block rounded-full border border-snow/25 px-4 py-2 text-sm hover:bg-snow hover:text-ink">
+              <Link href={`/destinations/${d.slug}`} className="inline-block rounded-full border border-snow/25 px-4 py-2 text-sm hover:border-snow hover:bg-snow hover:text-pine-deep">
                 {d.name}
               </Link>
             </li>

@@ -161,7 +161,7 @@ export default async function DestinationPage({ params }: PageProps<"/destinatio
           </div>
           <div>
             <h2 className="flex items-center gap-2 font-sans text-base font-medium">
-              <Mountain className="size-4 text-glacier" aria-hidden /> Things to do
+              <Mountain className="size-4 text-pine" aria-hidden /> Things to do
             </h2>
             <ul className="mt-4 space-y-3">
               {destination.thingsToDo.map((t) => (
@@ -243,7 +243,7 @@ export default async function DestinationPage({ params }: PageProps<"/destinatio
             <ul className="mt-2 space-y-1 text-sm">
               {destination.sources.map((source) => (
                 <li key={source}>
-                  <a href={source} target="_blank" rel="noreferrer" className="text-glacier underline-offset-4 hover:underline">
+                  <a href={source} target="_blank" rel="noreferrer" className="text-pine underline-offset-4 hover:underline">
                     {source.replace("https://", "")}
                   </a>
                 </li>

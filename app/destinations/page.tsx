@@ -41,11 +41,11 @@ export default function DestinationsPage({ searchParams }: PageProps<"/destinati
   const total = getAllDestinations().length;
   return (
     <>
-      <section className="relative overflow-hidden border-b border-line bg-snow pt-32 pb-12 sm:pb-16">
-        <Topography seed={2} className="text-ink/[0.05]" />
+      <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-pine-soft/70 to-snow pt-32 pb-12 sm:pb-16">
+        <Topography seed={2} className="text-pine/[0.08]" />
         <div className="container-page relative">
-          <p className="eyebrow mb-4 flex items-center gap-2 text-muted">
-            <span aria-hidden className="h-px w-6 bg-apricot-bright" />
+          <p className="eyebrow mb-4 flex items-center gap-2 text-pine">
+            <span aria-hidden className="h-0.5 w-6 rounded-full bg-pine" />
             {total} destinations · 4 regions
           </p>
           <h1 className="max-w-3xl text-5xl leading-[0.98] sm:text-7xl">

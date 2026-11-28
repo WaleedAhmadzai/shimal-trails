@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import type { Difficulty } from "@/types";
 
-type Tone = "neutral" | "glacier" | "apricot" | "easy" | "moderate" | "challenging" | "glass";
+type Tone = "neutral" | "glacier" | "apricot" | "pine" | "easy" | "moderate" | "challenging" | "glass";
 
 export interface BadgeProps {
   tone?: Tone;
@@ -13,7 +13,8 @@ const tones: Record<Tone, string> = {
   neutral: "bg-paper-2 text-ink-2",
   glacier: "bg-glacier-soft text-glacier",
   apricot: "bg-apricot-soft text-apricot",
-  easy: "bg-[#e1f0e6] text-success",
+  pine: "bg-pine-soft text-pine",
+  easy: "bg-pine-soft text-pine",
   moderate: "bg-warning-soft text-warning",
   challenging: "bg-danger-soft text-danger",
   glass: "bg-ink/40 text-snow backdrop-blur-md ring-1 ring-snow/20",

@@ -14,8 +14,8 @@ export default function PlanTripPage() {
     <div className="container-page pt-28 pb-24">
       <header className="mb-10 grid gap-8 lg:grid-cols-[1fr_24rem] lg:items-end">
         <div className="max-w-2xl">
-          <p className="eyebrow mb-4 flex items-center gap-2 text-muted">
-            <span aria-hidden className="h-px w-6 bg-apricot-bright" />
+          <p className="eyebrow mb-4 flex items-center gap-2 text-pine">
+            <span aria-hidden className="h-0.5 w-6 rounded-full bg-pine" />
             Get a quote
           </p>
           <h1 className="text-5xl leading-[0.98] sm:text-7xl">
@@ -32,7 +32,7 @@ export default function PlanTripPage() {
             { icon: ShieldCheck, text: "Free, no obligation to book" },
           ].map((item) => (
             <li key={item.text} className="flex items-center gap-3">
-              <span className="grid size-9 place-items-center rounded-full bg-glacier-soft text-glacier">
+              <span className="grid size-9 place-items-center rounded-full bg-pine-soft text-pine">
                 <item.icon className="size-4" aria-hidden />
               </span>
               {item.text}

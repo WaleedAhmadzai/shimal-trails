@@ -9,12 +9,13 @@ export interface FooterProps {
 
 export function Footer({ links }: FooterProps) {
   return (
-    <footer className="no-print relative overflow-hidden bg-ink text-snow">
+    <footer className="no-print relative overflow-hidden bg-pine-deep text-snow">
+      <div aria-hidden className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-pine-bright via-apricot-bright to-glacier-bright" />
       <Topography seed={7} className="text-snow/[0.06]" />
       <div className="container-page relative grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr] md:py-20">
         <div className="max-w-sm">
           <Logo tone="light" />
-          <p className="mt-5 text-sm leading-relaxed text-snow/65">
+          <p className="mt-5 text-sm leading-relaxed text-snow/75">
             Plan a realistic trip to northern Pakistan: where to go, when it is open, how long the roads take and what it
             costs in PKR.
           </p>
@@ -28,7 +29,7 @@ export function Footer({ links }: FooterProps) {
           <ul className="space-y-2.5 text-sm">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-snow/80 transition hover:text-apricot-bright">
+                <Link href={link.href} className="text-snow/80 transition hover:text-apricot-soft">
                   {link.label}
                 </Link>
               </li>
@@ -41,7 +42,7 @@ export function Footer({ links }: FooterProps) {
           <ul className="space-y-2.5 text-sm">
             {regions.map((region) => (
               <li key={region.id}>
-                <Link href={`/destinations?region=${region.id}`} className="text-snow/80 transition hover:text-apricot-bright">
+                <Link href={`/destinations?region=${region.id}`} className="text-snow/80 transition hover:text-apricot-soft">
                   {region.name}
                 </Link>
               </li>

@@ -130,7 +130,7 @@ export function TripRequestForm() {
           </div>
         )}
 
-        <fieldset className="space-y-5 rounded-[1.4rem] border border-line bg-snow p-6 sm:p-8">
+        <fieldset className="space-y-5 rounded-3xl border border-line bg-snow p-6 sm:p-8">
           <legend className="float-left mb-2 w-full font-display text-3xl">About you</legend>
           <div className="clear-both grid gap-5 sm:grid-cols-2">
             <FormField id="fullName" label="Full name" required error={errors.fullName} className="sm:col-span-2">
@@ -156,7 +156,7 @@ export function TripRequestForm() {
             <p className="text-sm font-medium">Best way to reach you</p>
             <div className="mt-2 flex flex-wrap gap-2" role="radiogroup" aria-label="Best way to reach you">
               {(Object.keys(CONTACT_LABELS) as (keyof typeof CONTACT_LABELS)[]).map((c) => (
-                <label key={c} className="cursor-pointer rounded-full border border-line-strong px-4 py-2 text-sm transition has-[:checked]:border-ink has-[:checked]:bg-ink has-[:checked]:text-snow has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-apricot-bright">
+                <label key={c} className="cursor-pointer rounded-full border border-line-strong px-4 py-2 text-sm transition has-[:checked]:border-pine has-[:checked]:bg-pine has-[:checked]:text-snow has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-apricot-bright">
                   <input type="radio" name="contactBy" value={c} checked={form.contactBy === c}
                     onChange={() => update("contactBy", c)} className="sr-only" />
                   {c === "whatsapp" ? "WhatsApp" : c === "call" ? "Phone call" : "Email"}
@@ -166,7 +166,7 @@ export function TripRequestForm() {
           </div>
         </fieldset>
 
-        <fieldset className="space-y-5 rounded-[1.4rem] border border-line bg-snow p-6 sm:p-8">
+        <fieldset className="space-y-5 rounded-3xl border border-line bg-snow p-6 sm:p-8">
           <legend className="float-left mb-2 w-full font-display text-3xl">Your trip</legend>
           <div className="clear-both grid gap-5 sm:grid-cols-2">
             <FormField id="startDate" label="Start date" required error={errors.startDate} hint={`At least ${LIMITS.minNoticeDays} days from today`}>
@@ -269,7 +269,7 @@ export function TripRequestForm() {
             </Link>
           </TripSummary>
         ) : (
-          <div className="rounded-[1.4rem] border border-dashed border-line-strong bg-snow/60 p-6">
+          <div className="rounded-3xl border border-dashed border-line-strong bg-snow/60 p-6">
             <p className="font-display text-2xl">No itinerary yet</p>
             <p className="mt-2 text-sm text-muted">
               You can still send a request, but operators reply faster when they can see your plan.
