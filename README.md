@@ -7,7 +7,7 @@
 | --- | --- |
 | Waleed Ahmadzai | 23I-2128 |
 | Ayesha | 23I-____ |
-| Umar Aziz | 23I-____ |
+| Umar Aziz | 23I-2022 |
 
 - Repository: https://github.com/WaleedAhmadzai/shimal-trails/tree/assignment-3
 - Live site (Vercel): _to be added_
