@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/*
+  Shimal Trails design tokens. Every colour, font and shadow used in a
+  component comes from here, so the look stays consistent on every page.
+  Palette: warm paper, deep ink, glacier teal for data, Hunza apricot as the
+  accent and pine green as the tertiary colour (success, "good to go",
+  nature moments).
+*/
+@theme {
+  --color-paper: #f8f5ee;
+  --color-paper-2: #efe9dc;
+  --color-snow: #fffefb;
+  --color-ink: #0c1d19;
+  --color-ink-2: #22332e;
+  --color-muted: #5a6561;
+  --color-line: #e6dfd1;
+  --color-line-strong: #cfc5b3;
+
+  --color-apricot: #d4501a;
+  --color-apricot-bright: #f06a2c;
+  --color-apricot-deep: #b8430f;
+  --color-apricot-soft: #fde6d6;
+
+  --color-glacier: #1f7f78;
+  --color-glacier-bright: #2a9d93;
+  --color-glacier-soft: #d8f0ec;
+
+  --color-pine: #1e6b45;
+  --color-pine-bright: #34a06a;
+  --color-pine-deep: #123f2a;
+  --color-pine-soft: #dcf1e4;
+
+  --color-success: #1e6b45;
+  --color-warning: #8a5005;
+  --color-warning-soft: #fbefd9;
+  --color-danger: #b42318;
+  --color-danger-soft: #fbe4e1;
+
+  --font-display: var(--font-instrument), "Times New Roman", serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --shadow-soft: 0 1px 2px rgb(12 29 25 / 0.04), 0 10px 28px -14px rgb(18 63 42 / 0.2);
+  --shadow-lift: 0 2px 4px rgb(12 29 25 / 0.05), 0 28px 52px -22px rgb(18 63 42 / 0.42);
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-rise: rise 0.8s var(--ease-out-soft) both;
+  --animate-fade: fade 0.4s ease-out both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-normal tracking-tight text-balance;
+  }
+  ::selection {
+    @apply bg-pine text-snow;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-apricot-bright;
+  }
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+@utility eyebrow {
+  @apply font-mono text-[0.7rem] uppercase tracking-[0.18em];
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}

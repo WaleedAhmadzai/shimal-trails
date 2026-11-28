@@ -1,0 +1,93 @@
+import type { Pass, RoadEdge, RoadNode } from "@/types";
+
+// A simplified road graph of northern Pakistan. Times are typical driving
+// times in good weather, rounded, and include jeep sections where noted.
+// They are planning estimates, not guarantees.
+
+export const nodes: RoadNode[] = [
+  { id: "islamabad", name: "Islamabad", altitudeM: 540 },
+  { id: "lahore", name: "Lahore", altitudeM: 217 },
+  { id: "murree", name: "Murree", altitudeM: 2290 },
+  { id: "nathiagali", name: "Nathiagali", altitudeM: 2500 },
+  { id: "abbottabad", name: "Abbottabad", altitudeM: 1260 },
+  { id: "mansehra", name: "Mansehra", altitudeM: 1090 },
+  { id: "balakot", name: "Balakot", altitudeM: 980 },
+  { id: "shogran", name: "Shogran", altitudeM: 2360 },
+  { id: "naran", name: "Naran", altitudeM: 2400 },
+  { id: "saifulmalook", name: "Saif-ul-Malook", altitudeM: 3224 },
+  { id: "besham", name: "Besham", altitudeM: 610 },
+  { id: "chilas", name: "Chilas", altitudeM: 1265 },
+  { id: "raikot", name: "Raikot Bridge", altitudeM: 1200 },
+  { id: "fairymeadows", name: "Fairy Meadows", altitudeM: 3300 },
+  { id: "jaglot", name: "Jaglot", altitudeM: 1300 },
+  { id: "gilgit", name: "Gilgit", altitudeM: 1500 },
+  { id: "naltar", name: "Naltar", altitudeM: 2900 },
+  { id: "karimabad", name: "Karimabad", altitudeM: 2500 },
+  { id: "attabad", name: "Attabad Lake", altitudeM: 2560 },
+  { id: "passu", name: "Passu", altitudeM: 2450 },
+  { id: "sost", name: "Sost", altitudeM: 2800 },
+  { id: "khunjerab", name: "Khunjerab Pass", altitudeM: 4693 },
+  { id: "skardu", name: "Skardu", altitudeM: 2230 },
+  { id: "shigar", name: "Shigar", altitudeM: 2260 },
+  { id: "deosai", name: "Deosai", altitudeM: 4100 },
+  { id: "mingora", name: "Mingora", altitudeM: 980 },
+  { id: "kalam", name: "Kalam", altitudeM: 2000 },
+  { id: "dir", name: "Dir", altitudeM: 1420 },
+  { id: "kumrat", name: "Kumrat", altitudeM: 2400 },
+  { id: "chitral", name: "Chitral", altitudeM: 1500 },
+  { id: "bumburet", name: "Bumburet", altitudeM: 2000 },
+  { id: "muzaffarabad", name: "Muzaffarabad", altitudeM: 740 },
+  { id: "keran", name: "Keran", altitudeM: 1520 },
+  { id: "dowarian", name: "Dowarian", altitudeM: 1600 },
+  { id: "kel", name: "Kel", altitudeM: 2100 },
+  { id: "rattigali", name: "Ratti Gali", altitudeM: 3700 },
+];
+
+export const passes: Pass[] = [
+  { id: "babusar", name: "Babusar Pass", altitudeM: 4173, openMonths: [6, 7, 8, 9, 10] },
+  { id: "khunjerab", name: "Khunjerab Pass", altitudeM: 4693, openMonths: [5, 6, 7, 8, 9, 10, 11] },
+  { id: "deosai", name: "Deosai plateau road", altitudeM: 4100, openMonths: [6, 7, 8, 9] },
+];
+
+export const edges: RoadEdge[] = [
+  { from: "lahore", to: "islamabad", km: 375, hours: 4.5, road: "M-2 Motorway" },
+  { from: "islamabad", to: "murree", km: 60, hours: 1.5, road: "Murree Expressway" },
+  { from: "murree", to: "nathiagali", km: 35, hours: 1, road: "Murree–Abbottabad road" },
+  { from: "islamabad", to: "abbottabad", km: 120, hours: 2, road: "Hazara Motorway" },
+  { from: "abbottabad", to: "mansehra", km: 25, hours: 0.75, road: "Karakoram Highway" },
+  { from: "mansehra", to: "balakot", km: 38, hours: 1, road: "N-15" },
+  { from: "balakot", to: "shogran", km: 35, hours: 1.5, road: "N-15 and Kiwai road" },
+  { from: "balakot", to: "naran", km: 85, hours: 2.5, road: "N-15 Kaghan road" },
+  { from: "naran", to: "saifulmalook", km: 10, hours: 1, road: "Jeep track" },
+  { from: "naran", to: "chilas", km: 115, hours: 4, road: "N-15 over Babusar", pass: "babusar" },
+  { from: "mansehra", to: "besham", km: 120, hours: 3.5, road: "Karakoram Highway" },
+  { from: "besham", to: "chilas", km: 250, hours: 6.5, road: "Karakoram Highway" },
+  { from: "chilas", to: "raikot", km: 55, hours: 1.5, road: "Karakoram Highway" },
+  { from: "raikot", to: "fairymeadows", km: 15, hours: 4.5, road: "Jeep track and 2–3 h hike" },
+  { from: "raikot", to: "jaglot", km: 30, hours: 0.75, road: "Karakoram Highway" },
+  { from: "jaglot", to: "gilgit", km: 45, hours: 1, road: "Karakoram Highway" },
+  { from: "jaglot", to: "skardu", km: 165, hours: 5, road: "Gilgit–Skardu road" },
+  { from: "gilgit", to: "naltar", km: 40, hours: 2, road: "Jeep track" },
+  { from: "gilgit", to: "karimabad", km: 100, hours: 2.5, road: "Karakoram Highway" },
+  { from: "karimabad", to: "attabad", km: 25, hours: 0.5, road: "Karakoram Highway" },
+  { from: "attabad", to: "passu", km: 35, hours: 0.75, road: "Karakoram Highway" },
+  { from: "passu", to: "sost", km: 40, hours: 0.75, road: "Karakoram Highway" },
+  { from: "sost", to: "khunjerab", km: 85, hours: 2, road: "Karakoram Highway", pass: "khunjerab" },
+  { from: "skardu", to: "shigar", km: 30, hours: 1, road: "Shigar road" },
+  { from: "skardu", to: "deosai", km: 35, hours: 2.5, road: "Jeep road", pass: "deosai" },
+  { from: "islamabad", to: "mingora", km: 250, hours: 4.5, road: "Swat Motorway" },
+  { from: "mingora", to: "kalam", km: 100, hours: 3, road: "Swat Valley road" },
+  { from: "mingora", to: "dir", km: 120, hours: 3.5, road: "N-45" },
+  { from: "dir", to: "kumrat", km: 70, hours: 3, road: "Thal road and jeep track" },
+  { from: "dir", to: "chitral", km: 120, hours: 4, road: "N-45 via Lowari Tunnel" },
+  { from: "chitral", to: "bumburet", km: 40, hours: 1.5, road: "Kalash valley road" },
+  { from: "islamabad", to: "muzaffarabad", km: 135, hours: 3.5, road: "Murree–Kohala road" },
+  { from: "muzaffarabad", to: "keran", km: 95, hours: 3, road: "Neelum road" },
+  { from: "keran", to: "dowarian", km: 40, hours: 1.5, road: "Neelum road" },
+  { from: "dowarian", to: "kel", km: 70, hours: 2.5, road: "Neelum road" },
+  { from: "dowarian", to: "rattigali", km: 20, hours: 3.5, road: "Jeep track and 1 h hike" },
+];
+
+export const transitNames: Record<string, string> = Object.fromEntries(
+  nodes.map((n) => [n.id, n.name]),
+);
