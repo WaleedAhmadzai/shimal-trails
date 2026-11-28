@@ -10,13 +10,13 @@ export const team: TeamMember[] = [
   {
     id: "ayesha",
     name: "Ayesha",
-    role: "Brand, layout and home",
-    built: "Design system, navigation, home and about pages",
+    role: "Destinations and discovery",
+    built: "Destination data, search, filters and sort, destination pages",
   },
   {
     id: "umar",
     name: "Umar Aziz",
-    role: "Destinations and discovery",
-    built: "Destination data, search and filters, destination pages",
+    role: "Design system, layout and home",
+    built: "Colour palette and UI refresh, navigation, home and about pages",
   },
 ];

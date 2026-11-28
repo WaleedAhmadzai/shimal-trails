@@ -1,7 +1,7 @@
 # Shimal Trails — Northern Pakistan trip planner
 
 **CS4032 Web Programming · Assignment 3 · Fall 2026**
-**Group:** G 03 · **Topic:** #17 Northern Pakistan trip planner
+**Group:** G03 · **Topic:** #17 Northern Pakistan trip planner
 
 | Member | Roll no. |
 | --- | --- |
@@ -10,7 +10,7 @@
 | Umar Aziz | 23I-2022 |
 
 - Repository: https://github.com/WaleedAhmadzai/shimal-trails
-- Live site (Vercel): (https://shimal-trails.vercel.app)
+- Live site (Vercel): https://shimal-trails.vercel.app
 - Video demo: _to be added_
 
 ## About the app
@@ -95,10 +95,13 @@ assets/photos/  destination photos (Wikimedia Commons)
 
 | Member | Pages | Components and logic |
 | --- | --- | --- |
-| Waleed Ahmadzai | _to be filled in_ | _to be filled in_ |
+| Waleed Ahmadzai (group leader) | Itinerary builder (`/itinerary`), trip request (`/plan-trip`) | ItineraryBuilder, ItineraryStop, DayTimeline, ElevationProfile, TripSummary, WarningList, DestinationPicker, AddToItineraryButton, LoadTemplateButton, TripRequestForm, FormField, ConfirmationDialog; `context/ItineraryProvider.tsx`, `lib/itinerary/` (route finding, day plan, cost, warnings, share links), `lib/validation.ts` and their unit tests; project setup, Vercel deployment |
 | Ayesha | Destinations listing (`/destinations`), destination detail (`/destinations/[slug]`), both `loading.tsx` files | DestinationCard, DestinationFilters, SearchBar, DestinationImage, FavouriteButton, SeasonBar, FactGrid, CardGridSkeleton; `data/destinations.ts`, `types/index.ts`, `lib/destinations.ts` (search, filter, sort); "Lowest altitude first" sort and its unit test; mobile menu fix in `Navbar.tsx` |
-| Umar Aziz | _to be filled in_ | _to be filled in_ |
+| Umar Aziz | Home (`/`), About (`/about`), 404 page, root layout | Navbar, Footer, Logo, Button, Badge, SectionHeading, RegionTile, TeamCard, Topography, EmptyState, SelectField; design tokens in `app/globals.css` and the UI refresh (brighter palette, pine green tertiary colour, cleaner cards and focus states, see `UI-REFRESH.md`) |
 
+**Waleed (member A, itinerary and form):** Built the itinerary builder, the stateful heart of the app: the shared itinerary store (React Context with `useReducer`, saved in `localStorage`), the road graph and route finding, the day-by-day plan, the PKR cost estimate and the season and altitude warnings, plus share links and printing. Built the trip request form with controlled inputs, validation on blur and submit, an error summary and a confirmation dialog. Set up the project and deployed it on Vercel. Presents the itinerary and form demo and code walkthrough in the video.
+
+**Umar (member C, design and layout):** Owns the look of the app and its shared shell: the root layout with Navbar and Footer, the Home and About pages, the 404 page and the shared UI components. Led the UI refresh that brightened the palette, added pine green as a tertiary colour, unified card radii and shadows and made focus states clearer, documented in `UI-REFRESH.md`. Presents the introduction, the layout and routing walkthrough and the responsive (mobile) demo in the video.
 
 **Ayesha (member B, discovery):** Owns the destinations side of the app: the listing page with search, filters and sort, the dynamic detail page with `notFound()` for unknown destinations and `generateMetadata` for per-page titles, the two `loading.tsx` files, the `Destination` type and the 18 destination records. Added the "Lowest altitude first" sort option with a unit test that checks the order, and fixed a mobile bug where the navbar's blur effect collapsed the menu's background to zero height, so the links showed over the page text on phones. Presents the discovery demo and code walkthrough in the video.
 
