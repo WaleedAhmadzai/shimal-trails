@@ -25,6 +25,13 @@ describe("destination search", () => {
     const result = queryDestinations({ ...EMPTY_FILTERS, sort: "altitude" });
     expect(result[0].slug).toBe("khunjerab-pass");
   });
+  
+  it("sorts lowest altitude first", () => {
+    const result = queryDestinations({ ...EMPTY_FILTERS, sort: "lowest" });
+    for (let i = 1; i < result.length; i++) {
+      expect(result[i].altitudeM).toBeGreaterThanOrEqual(result[i - 1].altitudeM);
+    }
+  });
 
   it("suggests which filter to remove when nothing matches", () => {
     const f = { ...EMPTY_FILTERS, q: "hunza", region: "azad-kashmir" as const };
